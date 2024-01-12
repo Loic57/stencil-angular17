@@ -1,0 +1,16 @@
+$fieldset-colors: (
+  neutral-200: (
+    border-color: var(--fieldset-color-neutral-200-border-color)
+  )
+);
+
+$fieldset-sizes: (
+  default: (
+    border-radius: var(--fieldset-size-default-border-radius),
+    border-width: var(--fieldset-size-default-border-width),
+    padding-top: var(--fieldset-size-default-padding-top),
+    padding-right: var(--fieldset-size-default-padding-right),
+    padding-bottom: var(--fieldset-size-default-padding-bottom),
+    padding-left: var(--fieldset-size-default-padding-left),
+  )
+);

@@ -1,0 +1,32 @@
+import { Meta } from "@storybook/blocks";
+import { linkTo } from '@storybook/addon-links';
+
+import VisualIntro from "./assets/images/visual-intro.svg";
+
+
+<Meta title="Introduction/Accueil" />
+
+<div className="fullscreen">
+  <div className="text-center">
+    <img src={VisualIntro} className="mb-40" />
+    <ap-heading size="h1" mb-32>Agile Partner Web Components</ap-heading>
+    <ap-paragraph mb-32 style={{ maxWidth: '800px' }}>Bienvenue dans le kit de Web Components Agile Partner. L'équipe design est fière d'avoir établi les lignes directrices qui vous aideront à créer de meilleurs produits et expériences numériques.</ap-paragraph>
+    <ap-button onClick={linkTo('Introduction/Consommer des composants dans un projet')} content="Je consomme des composants dans un projet" mr-16 />
+    <ap-button onClick={linkTo('Introduction/Ajouter, Modifier ou Supprimer des composants')} content="Je modifie/ajoute/supprime des composants" ml-16 />
+  </div>
+</div>
+
+
+<style>
+  {`
+    .fullscreen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 69%;
+      margin: auto;
+    }
+  `}
+</style>

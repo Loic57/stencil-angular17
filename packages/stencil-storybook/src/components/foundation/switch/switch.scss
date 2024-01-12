@@ -1,0 +1,191 @@
+$component: ap-switch;
+
+@import 'mapping';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  outline: 0;
+  transition: 0.2s;
+
+  .#{$component}__container {
+    position: relative;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    border-style: solid;
+    box-sizing: border-box;
+  }
+
+  .#{$component}__icons {
+    position: absolute;
+    display: flex;
+    inset: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.2rem;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .#{$component}__thumb {
+    cursor: pointer;
+    pointer-events: none;
+    transition: transform 0.2s;
+  }
+
+  ap-checkbox {
+    position: absolute;
+    inset: 0px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:host([disabled="true"]), &:host([disabled="true"]) ap-checkbox, &:host([disabled="true"]) ap-label {
+    cursor: not-allowed!important;
+  }
+
+  @each $key, $value in $switch-colors {
+    &:host([color="#{$key}"]) {
+
+      // disabled styles
+      .#{$component}__container {
+        background-color: map-deep-get($value, 'unchecked', 'disabled', 'background-color');
+        border-color: map-deep-get($value, 'unchecked', 'disabled', 'border-color');
+
+        .#{$component}__thumb {
+          background-color: map-deep-get($value, 'unchecked', 'disabled', 'thumb', 'background-color');
+        }
+      }
+
+
+      // not disabled styles
+      &:host(:not([disabled="true"]):not([error="true"])) {
+        .#{$component}__container {
+          background-color: map-deep-get($value, 'unchecked', 'enable', 'background-color');
+          border-color: map-deep-get($value, 'unchecked', 'enable', 'border-color');
+
+          .#{$component}__thumb {
+            background-color: map-deep-get($value, 'unchecked', 'enable', 'thumb', 'background-color');
+          }
+
+          @media(hover: hover) {
+            &:host(:hover) {
+              background-color: map-deep-get($value, 'unchecked', 'hover', 'background-color');
+              border-color: map-deep-get($value, 'unchecked', 'hover', 'border-color');
+
+              .#{$component}__thumb {
+                background-color: map-deep-get($value, 'unchecked', 'hover', 'thumb', 'background-color');;
+              }
+            }
+
+            &:host(:focus-within) {
+              background-color: map-deep-get($value, 'unchecked', 'focus', 'background-color');
+              border-color: map-deep-get($value, 'unchecked', 'focus', 'border-color');
+
+              .#{$component}__thumb {
+                background-color: map-deep-get($value, 'unchecked', 'focus', 'thumb', 'background-color');;
+              }
+            }
+          }
+
+          ap-checkbox {
+            & ~ .#{$component}__icons {
+              .#{$component}__left-icon {
+                ap-icon { color: map-deep-get($value, 'unchecked', 'enable', 'icon', 'left'); }
+              }
+
+              .#{$component}__right-icon {
+                ap-icon { color: map-deep-get($value, 'unchecked', 'enable', 'icon', 'right'); }
+              }
+            }
+
+            &[checked="true"] {
+              & ~ .#{$component}__icons {
+                .#{$component}__left-icon {
+                  ap-icon { color: map-deep-get($value, 'checked', 'enable', 'icon', 'left'); }
+                }
+
+                .#{$component}__right-icon {
+                  ap-icon { color: map-deep-get($value, 'checked', 'enable', 'icon', 'right'); }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // not disabled styles
+      &:host([error="true"]:not([disabled="true"])) {
+        .#{$component}__container {
+          background-color: map-deep-get($value, 'unchecked', 'error', 'background-color');
+          border-color: map-deep-get($value, 'unchecked', 'error', 'border-color');
+
+          .#{$component}__thumb {
+            background-color: map-deep-get($value, 'unchecked', 'error', 'thumb', 'background-color');
+          }
+        }
+
+        ap-checkbox {
+          & ~ .#{$component}__icons {
+            .#{$component}__left-icon {
+              ap-icon { color: map-deep-get($value, 'unchecked', 'error', 'icon', 'left'); }
+            }
+
+            .#{$component}__right-icon {
+              ap-icon { color: map-deep-get($value, 'unchecked', 'error', 'icon', 'right'); }
+            }
+          }
+
+          &[checked="true"] {
+            & ~ .#{$component}__icons {
+              .#{$component}__left-icon {
+                ap-icon { color: map-deep-get($value, 'checked', 'error', 'icon', 'left'); }
+              }
+
+              .#{$component}__right-icon {
+                ap-icon { color: map-deep-get($value, 'checked', 'error', 'icon', 'right'); }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @each $key, $value in $switch-sizes {
+    &:host([size="#{$key}"]) {
+      row-gap: 0.8rem;
+
+      .#{$component}__container {
+        height: map-deep-get($value, 'height');
+        width: map-deep-get($value, 'width');
+        border-width: map-deep-get($value, 'border-width');
+        border-radius: map-deep-get($value, 'border-radius');
+
+        padding-top: map-deep-get($value, 'padding-top');
+        padding-right: map-deep-get($value, 'padding-right');
+        padding-bottom: map-deep-get($value, 'padding-bottom');
+        padding-left: map-deep-get($value, 'padding-left');
+      }
+
+      .#{$component}__thumb {
+        height: map-deep-get($value, 'thumb', 'height');
+        width: map-deep-get($value, 'thumb', 'width');
+        border-radius: 100px;
+      }
+
+      ap-checkbox[checked="true"] {
+        & ~ .#{$component}__thumb {
+          transform: translateX(calc((map-deep-get($value, 'width') / 2) - map-deep-get($value, 'padding-right')));
+        }
+      }
+    }
+  }
+}

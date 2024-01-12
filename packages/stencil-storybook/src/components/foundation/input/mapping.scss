@@ -1,0 +1,111 @@
+$input-colors: (
+  neutral-50: (
+    enable: (
+      background-color: var(--input-color-neutral-50-enable-background-color),
+      border-color: var(--input-color-neutral-50-enable-border-color),
+      placeholder: (
+        color: var(--input-color-neutral-50-enable-placeholder)
+      ),
+      value: (
+        color: var(--input-color-neutral-50-enable-val)
+      ),
+      leading-icon: (
+        color: var(--input-color-neutral-50-enable-leading-icon)
+      ),
+      trailing-icon: (
+        color: var(--input-color-neutral-50-enable-trailing-icon)
+      ),
+    ),
+    hover: (
+      background-color: var(--input-color-neutral-50-hover-background-color),
+      border-color: var(--input-color-neutral-50-hover-border-color),
+      placeholder: (
+        color: var(--input-color-neutral-50-hover-placeholder)
+      ),
+      value: (
+        color: var(--input-color-neutral-50-hover-val)
+      ),
+      leading-icon: (
+        color: var(--input-color-neutral-50-hover-leading-icon)
+      ),
+      trailing-icon: (
+        color: var(--input-color-neutral-50-hover-trailing-icon)
+      ),
+    ),
+    focus: (
+      background-color: var(--input-color-neutral-50-focus-background-color),
+      border-color: var(--input-color-neutral-50-focus-border-color),
+      placeholder: (
+        color: var(--input-color-neutral-50-focus-placeholder)
+      ),
+      value: (
+        color: var(--input-color-neutral-50-focus-val)
+      ),
+      leading-icon: (
+        color: var(--input-color-neutral-50-focus-leading-icon)
+      ),
+      trailing-icon: (
+        color: var(--input-color-neutral-50-focus-trailing-icon)
+      ),
+    ),
+    disabled: (
+      background-color: var(--input-color-neutral-50-disabled-background-color),
+      border-color: var(--input-color-neutral-50-disabled-border-color),
+      placeholder: (
+        color: var(--input-color-neutral-50-disabled-placeholder)
+      ),
+      value: (
+        color: var(--input-color-neutral-50-disabled-val)
+      ),
+      leading-icon: (
+        color: var(--input-color-neutral-50-disabled-leading-icon)
+      ),
+      trailing-icon: (
+        color: var(--input-color-neutral-50-disabled-trailing-icon)
+      ),
+    ),
+    error: (
+      background-color: var(--input-color-neutral-50-error-background-color),
+      border-color: var(--input-color-neutral-50-error-border-color),
+      placeholder: (
+        color: var(--input-color-neutral-50-error-placeholder)
+      ),
+      value: (
+        color: var(--input-color-neutral-50-error-val)
+      ),
+      leading-icon: (
+        color: var(--input-color-neutral-50-error-leading-icon)
+      ),
+      trailing-icon: (
+        color: var(--input-color-neutral-50-error-trailing-icon)
+      ),
+    )
+  )
+);
+
+$input-sizes: (
+  default: (
+    border-width: var(--input-size-default-input-border-width),
+    border-radius: var(--input-size-default-input-border-radius),
+    padding: (
+      right: var(--input-size-default-input-padding-right),
+      left: var(--input-size-default-input-padding-left)
+    ),
+    spacing: (
+      outside: var(--input-size-default-input-spacing-outside),
+      gap: var(--input-size-default-input-spacing-gap),
+    ),
+    height: var(--input-size-default-input-height),
+    placeholder: (
+      font-weight: var(--input-size-default-input-placeholder-font-weight),
+      font-size: var(--input-size-default-input-placeholder-font-size)
+    ),
+    val: (
+      font-weight: var(--input-size-default-input-val-font-weight),
+      font-size: var(-input-size-default-input-val-font-size)
+    ),
+    icon: (
+      width: var(--input-size-default-input-icon-size)
+    )
+  )
+);

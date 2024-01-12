@@ -1,0 +1,223 @@
+$tabs-colors: (
+  primary-500: (
+    filled: (
+      container: (
+        background-color: var(--tabs-color-primary-500-filled-container-background-color),
+        border-color: var(--tabs-color-primary-500-filled-container-border-color),
+      ),
+      enabled: (
+        item: (
+          background-color: var(--tabs-color-primary-500-filled-enabled-item-background-color),
+          border-color: var(--tabs-color-primary-500-filled-enabled-item-border-color),
+          color: var(--tabs-color-primary-500-filled-enabled-item-color),
+          icon: var(--tabs-color-primary-500-filled-enabled-item-icon),
+          outline-color: var(--tabs-color-primary-500-filled-enabled-item-outline-color)
+        )
+      ),
+      hover: (
+        item: (
+          background-color: var(--tabs-color-primary-500-filled-hover-item-background-color),
+          border-color: var(--tabs-color-primary-500-filled-hover-item-border-color),
+          color: var(--tabs-color-primary-500-filled-hover-item-color),
+          icon: var(--tabs-color-primary-500-filled-hover-item-icon),
+          outline-color: var(--tabs-color-primary-500-filled-hover-item-outline-color)
+        )
+      ),
+      focus: (
+        item: (
+          background-color: var(--tabs-color-primary-500-filled-focus-item-background-color),
+          border-color: var(--tabs-color-primary-500-filled-focus-item-border-color),
+          color: var(--tabs-color-primary-500-filled-focus-item-color),
+          icon: var(--tabs-color-primary-500-filled-focus-item-icon),
+          outline-color: var(--tabs-color-primary-500-filled-focus-item-outline-color)
+        )
+      ),
+      selected: (
+        item: (
+          background-color: var(--tabs-color-primary-500-filled-selected-item-background-color),
+          border-color: var(--tabs-color-primary-500-filled-selected-item-border-color),
+          color: var(--tabs-color-primary-500-filled-selected-item-color),
+          icon: var(--tabs-color-primary-500-filled-selected-item-icon),
+          outline-color: var(--tabs-color-primary-500-filled-selected-item-outline-color)
+        )
+      ),
+      disabled: (
+        item: (
+          background-color: var(--tabs-color-primary-500-filled-disabled-item-background-color),
+          border-color: var(--tabs-color-primary-500-filled-disabled-item-border-color),
+          color: var(--tabs-color-primary-500-filled-disabled-item-color),
+          icon: var(--tabs-color-primary-500-filled-disabled-item-icon),
+          outline-color: var(--tabs-color-primary-500-filled-disabled-item-outline-color)
+        )
+      )
+    ),
+    border: (
+      container: (
+        background-color: var(--tabs-color-primary-500-border-container-background-color),
+        border-color: var(--tabs-color-primary-500-border-container-border-color),
+      ),
+      enabled: (
+        item: (
+          background-color: var(--tabs-color-primary-500-border-enabled-item-background-color),
+          border-color: var(--tabs-color-primary-500-border-enabled-item-border-color),
+          color: var(--tabs-color-primary-500-border-enabled-item-color),
+          icon: var(--tabs-color-primary-500-border-enabled-item-icon),
+          outline-color: var(--tabs-color-primary-500-border-enabled-item-outline-color)
+        )
+      ),
+      hover: (
+        item: (
+          background-color: var(--tabs-color-primary-500-border-hover-item-background-color),
+          border-color: var(--tabs-color-primary-500-border-hover-item-border-color),
+          color: var(--tabs-color-primary-500-border-hover-item-color),
+          icon: var(--tabs-color-primary-500-border-hover-item-icon),
+          outline-color: var(--tabs-color-primary-500-border-hover-item-outline-color)
+        )
+      ),
+      focus: (
+        item: (
+          background-color: var(--tabs-color-primary-500-border-focus-item-background-color),
+          border-color: var(--tabs-color-primary-500-border-focus-item-border-color),
+          color: var(--tabs-color-primary-500-border-focus-item-color),
+          icon: var(--tabs-color-primary-500-border-focus-item-icon),
+          outline-color: var(--tabs-color-primary-500-border-focus-item-outline-color)
+        )
+      ),
+      selected: (
+        item: (
+          background-color: var(--tabs-color-primary-500-border-selected-item-background-color),
+          border-color: var(--tabs-color-primary-500-border-selected-item-border-color),
+          color: var(--tabs-color-primary-500-border-selected-item-color),
+          icon: var(--tabs-color-primary-500-border-selected-item-icon),
+          outline-color: var(--tabs-color-primary-500-border-selected-item-outline-color)
+        )
+      ),
+      disabled: (
+        item: (
+          background-color: var(--tabs-color-primary-500-border-disabled-item-background-color),
+          border-color: var(--tabs-color-primary-500-border-disabled-item-border-color),
+          color: var(--tabs-color-primary-500-border-disabled-item-color),
+          icon: var(--tabs-color-primary-500-border-disabled-item-icon),
+          outline-color: var(--tabs-color-primary-500-border-disabled-item-outline-color)
+        )
+      )
+    ),
+    text: (
+      container: (
+        background-color: var(--tabs-color-primary-500-text-container-background-color),
+        border-color: var(--tabs-color-primary-500-text-container-border-color),
+      ),
+      enabled: (
+        item: (
+          background-color: var(--tabs-color-primary-500-text-enabled-item-background-color),
+          border-color: var(--tabs-color-primary-500-text-enabled-item-border-color),
+          color: var(--tabs-color-primary-500-text-enabled-item-color),
+          icon: var(--tabs-color-primary-500-text-enabled-item-icon),
+          outline-color: var(--tabs-color-primary-500-text-enabled-item-outline-color)
+        )
+      ),
+      hover: (
+        item: (
+          background-color: var(--tabs-color-primary-500-text-hover-item-background-color),
+          border-color: var(--tabs-color-primary-500-text-hover-item-border-color),
+          color: var(--tabs-color-primary-500-text-hover-item-color),
+          icon: var(--tabs-color-primary-500-text-hover-item-icon),
+          outline-color: var(--tabs-color-primary-500-text-hover-item-outline-color)
+        )
+      ),
+      focus: (
+        item: (
+          background-color: var(--tabs-color-primary-500-text-focus-item-background-color),
+          border-color: var(--tabs-color-primary-500-text-focus-item-border-color),
+          color: var(--tabs-color-primary-500-text-focus-item-color),
+          icon: var(--tabs-color-primary-500-text-focus-item-icon),
+          outline-color: var(--tabs-color-primary-500-text-focus-item-outline-color)
+        )
+      ),
+      selected: (
+        item: (
+          background-color: var(--tabs-color-primary-500-text-selected-item-background-color),
+          border-color: var(--tabs-color-primary-500-text-selected-item-border-color),
+          color: var(--tabs-color-primary-500-text-selected-item-color),
+          icon: var(--tabs-color-primary-500-text-selected-item-icon),
+          outline-color: var(--tabs-color-primary-500-text-selected-item-outline-color)
+        )
+      ),
+      disabled: (
+        item: (
+          background-color: var(--tabs-color-primary-500-text-disabled-item-background-color),
+          border-color: var(--tabs-color-primary-500-text-disabled-item-border-color),
+          color: var(--tabs-color-primary-500-text-disabled-item-color),
+          icon: var(--tabs-color-primary-500-text-disabled-item-icon),
+          outline-color: var(--tabs-color-primary-500-text-disabled-item-outline-color)
+        )
+      )
+    ),
+  )
+);
+
+$tabs-sizes: (
+  default: (
+    container: (
+      filled: (
+        border-radius: var(--tabs-size-default-container-filled-border-radius),
+        border-width: var(--tabs-size-default-container-filled-border-bottom),
+        height: var(--tabs-size-default-container-filled-height),
+        gap: var(--tabs-size-default-container-filled-gap),
+        padding-right: var(--tabs-size-default-container-filled-padding-right),
+        padding-left: var(--tabs-size-default-container-filled-padding-left),
+      ),
+      border: (
+        border-radius: var(--tabs-size-default-container-border-border-radius),
+        border-width: var(--tabs-size-default-container-border-border-bottom),
+        height: var(--tabs-size-default-container-border-height),
+        gap: var(--tabs-size-default-container-border-gap),
+        padding-right: var(--tabs-size-default-container-border-padding-right),
+        padding-left: var(--tabs-size-default-container-border-padding-left),
+      ),
+      text: (
+        border-radius: var(--tabs-size-default-container-text-border-radius),
+        border-width: var(--tabs-size-default-container-text-border-bottom),
+        height: var(--tabs-size-default-container-text-height),
+        gap: var(--tabs-size-default-container-text-gap),
+        padding-right: var(--tabs-size-default-container-text-padding-right),
+        padding-left: var(--tabs-size-default-container-text-padding-left),
+      )
+    ),
+    item: (
+      filled: (
+        height: var(--tabs-size-default-item-filled-height),
+        border-radius: var(--tabs-size-default-item-filled-border-radius),
+        padding-top: var(--tabs-size-default-item-filled-padding-top),
+        padding-right: var(--tabs-size-default-item-filled-padding-right),
+        padding-bottom: var(--tabs-size-default-item-filled-padding-bottom),
+        padding-left: var(--tabs-size-default-item-filled-padding-left),
+        font-size: var(--tabs-size-default-item-filled-font-size),
+        gap: var(--tabs-size-default-item-filled-gap),
+        border-width: var(--tabs-size-default-item-filled-border-width)
+      ),
+      border: (
+        height: var(--tabs-size-default-item-border-height),
+        border-radius: var(--tabs-size-default-item-border-border-radius),
+        padding-top: var(--tabs-size-default-item-border-padding-top),
+        padding-right: var(--tabs-size-default-item-border-padding-right),
+        padding-bottom: var(--tabs-size-default-item-border-padding-bottom),
+        padding-left: var(--tabs-size-default-item-border-padding-left),
+        font-size: var(--tabs-size-default-item-border-font-size),
+        gap: var(--tabs-size-default-item-border-gap),
+        border-width: var(--tabs-size-default-item-border-border-width)
+      ),
+      text: (
+        height: var(--tabs-size-default-item-text-height),
+        border-radius: var(--tabs-size-default-item-text-border-radius),
+        padding-top: var(--tabs-size-default-item-text-padding-top),
+        padding-right: var(--tabs-size-default-item-text-padding-right),
+        padding-bottom: var(--tabs-size-default-item-text-padding-bottom),
+        padding-left: var(--tabs-size-default-item-text-padding-left),
+        font-size: var(--tabs-size-default-item-text-font-size),
+        gap: var(--tabs-size-default-item-text-gap),
+        border-width: var(--tabs-size-default-item-text-border-width)
+      )
+    )
+  )
+)

@@ -1,0 +1,305 @@
+$component: ap-checkbox;
+
+@import 'mapping';
+
+:host {
+
+  &:host-context(ap-switch) {
+    .#{$component} {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  outline: 0;
+
+  .#{$component}__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    inset: 0;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .#{$component}__checkbox {
+    border-style: solid;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0;
+    transition: 0.2s;
+  }
+
+  &:host([border="true"]) {
+    border-style: solid;
+  }
+
+  &:host([disabled="true"]), &:host([disabled="true"]) ap-label {
+    cursor: not-allowed!important;
+  }
+
+  // colors styles
+  @each $key, $value in $checkbox-colors {
+    &:host([color="#{$key}"]) {
+
+      // disabled styles
+      .#{$component}__checkbox {
+        background-color: map-deep-get($value, 'disabled', 'unchecked', 'checkbox', 'background-color');
+        border-color: map-deep-get($value, 'disabled', 'unchecked', 'checkbox', 'border-color');
+        color: map-deep-get($value, 'disabled', 'unchecked', 'checkbox', 'color');
+
+        ap-icon {
+          color: map-deep-get($value, 'disabled', 'unchecked', 'checkbox', 'color');
+        }
+      }
+
+      input {
+        &:checked + .#{$component}__checkbox {
+          background-color: map-deep-get($value, 'disabled', 'checked', 'checkbox', 'background-color');
+          border-color: map-deep-get($value, 'disabled', 'checked', 'checkbox', 'border-color');
+          color: map-deep-get($value, 'disabled', 'checked', 'checkbox', 'color');
+
+          ap-icon {
+            color: map-deep-get($value, 'disabled', 'checked', 'checkbox', 'color');
+          }
+        }
+      }
+
+      &:host([indeterminate="true"]) {
+        .#{$component}__checkbox {
+          background-color: map-deep-get($value, 'disabled', 'checked', 'checkbox', 'background-color');
+          border-color: map-deep-get($value, 'disabled', 'checked', 'checkbox', 'border-color');
+          color: map-deep-get($value, 'disabled', 'checked', 'checkbox', 'color');
+
+          ap-icon {
+            color: map-deep-get($value, 'disabled', 'checked', 'checkbox', 'color');
+          }
+        }
+      }
+
+      &:host([border="true"]) {
+        border-color: map-deep-get($value, 'disabled', 'unchecked', 'container', 'border-color');
+        background-color: map-deep-get($value, 'disabled', 'unchecked', 'container', 'background-color');
+      }
+
+      // not disabled styles
+      &:host(:not([disabled="true"]):not([error="true"])) {
+        .#{$component}__checkbox {
+          background-color: map-deep-get($value, 'enable', 'unchecked', 'checkbox', 'background-color');
+          border-color: map-deep-get($value, 'enable', 'unchecked', 'checkbox', 'border-color');
+          color: map-deep-get($value, 'enable', 'unchecked', 'checkbox', 'color');
+
+          ap-icon {
+            color: map-deep-get($value, 'enable', 'unchecked', 'checkbox', 'color');
+          }
+        }
+
+        &:host([checked="true"]) {
+          .#{$component}__checkbox {
+            background-color: map-deep-get($value, 'enable', 'checked', 'checkbox', 'background-color');
+            border-color: map-deep-get($value, 'enable', 'checked', 'checkbox', 'border-color');
+            color: map-deep-get($value, 'enable', 'checked', 'checkbox', 'color');
+
+            ap-icon {
+              color: map-deep-get($value, 'enable', 'checked', 'checkbox', 'color');
+            }
+          }
+        }
+
+        &:host([indeterminate="true"]) {
+          .#{$component}__checkbox {
+            background-color: map-deep-get($value, 'enable', 'checked', 'checkbox', 'background-color');
+            border-color: map-deep-get($value, 'enable', 'checked', 'checkbox', 'border-color');
+            color: map-deep-get($value, 'enable', 'checked', 'checkbox', 'color');
+
+            ap-icon {
+              color: map-deep-get($value, 'enable', 'checked', 'checkbox', 'color');
+            }
+          }
+        }
+
+        &:host([border="true"]) {
+          border-color: map-deep-get($value, 'enable', 'unchecked', 'container', 'border-color');
+          background-color: map-deep-get($value, 'enable', 'unchecked', 'container', 'background-color');
+        }
+
+        @media(hover: hover) {
+          &:host(:hover) {
+            .#{$component}__checkbox {
+              box-shadow: map-deep-get($value, 'box-shadow');
+              background-color: map-deep-get($value, 'hover', 'unchecked', 'checkbox', 'background-color');
+              border-color: map-deep-get($value, 'hover', 'unchecked', 'checkbox', 'border-color');
+              color: map-deep-get($value, 'hover', 'unchecked', 'checkbox', 'color');
+
+              ap-icon {
+                color: map-deep-get($value, 'hover', 'unchecked', 'checkbox', 'color');
+              }
+            }
+
+            &:host([checked="true"]) {
+              .#{$component}__checkbox {
+                box-shadow: map-deep-get($value, 'box-shadow');
+                background-color: map-deep-get($value, 'hover', 'checked', 'checkbox', 'background-color');
+                border-color: map-deep-get($value, 'hover', 'checked', 'checkbox', 'border-color');
+                color: map-deep-get($value, 'hover', 'checked', 'checkbox', 'color');
+
+                ap-icon {
+                  color: map-deep-get($value, 'hover', 'checked', 'checkbox', 'color');
+                }
+              }
+            }
+
+            &:host([indeterminate="true"]) {
+              .#{$component}__checkbox {
+                background-color: map-deep-get($value, 'hover', 'checked', 'checkbox', 'background-color');
+                border-color: map-deep-get($value, 'hover', 'checked', 'checkbox', 'border-color');
+                color: map-deep-get($value, 'hover', 'checked', 'checkbox', 'color');
+
+                ap-icon {
+                  color: map-deep-get($value, 'hover', 'checked', 'checkbox', 'color');
+                }
+              }
+            }
+
+            &:host([border="true"]) {
+              border-color: map-deep-get($value, 'hover', 'unchecked', 'container', 'border-color');
+              background-color: map-deep-get($value, 'hover', 'unchecked', 'container', 'background-color');
+            }
+          }
+
+          &:host(:focus-visible) {
+            .#{$component}__checkbox {
+              box-shadow: map-deep-get($value, 'box-shadow');
+              background-color: map-deep-get($value, 'focus', 'unchecked', 'checkbox', 'background-color');
+              border-color: map-deep-get($value, 'focus', 'unchecked', 'checkbox', 'border-color');
+              color: map-deep-get($value, 'focus', 'unchecked', 'checkbox', 'color');
+              outline: 0.2rem solid var(--color-neutral-black);
+
+              ap-icon {
+                color: map-deep-get($value, 'focus', 'unchecked', 'checkbox', 'color');
+              }
+            }
+
+            &:host([checked="true"]) {
+              .#{$component}__checkbox {
+                box-shadow: map-deep-get($value, 'box-shadow');
+                background-color: map-deep-get($value, 'focus', 'checked', 'checkbox', 'background-color');
+                border-color: map-deep-get($value, 'focus', 'checked', 'checkbox', 'border-color');
+                color: map-deep-get($value, 'focus', 'checked', 'checkbox', 'color');
+
+                ap-icon {
+                  color: map-deep-get($value, 'focus', 'checked', 'checkbox', 'color');
+                }
+              }
+            }
+
+            &:host([indeterminate="true"]) {
+              .#{$component}__checkbox {
+                background-color: map-deep-get($value, 'focus', 'checked', 'checkbox', 'background-color');
+                border-color: map-deep-get($value, 'focus', 'checked', 'checkbox', 'border-color');
+                color: map-deep-get($value, 'focus', 'checked', 'checkbox', 'color');
+
+                ap-icon {
+                  color: map-deep-get($value, 'focus', 'checked', 'checkbox', 'color');
+                }
+              }
+            }
+
+            &:host([border="true"]) {
+              border-color: map-deep-get($value, 'focus', 'unchecked', 'container', 'border-color');
+              background-color: map-deep-get($value, 'focus', 'unchecked', 'container', 'background-color');
+            }
+          }
+        }
+      }
+
+      &:host([error="true"]) {
+        .#{$component}__checkbox {
+          background-color: map-deep-get($value, 'error', 'unchecked', 'checkbox', 'background-color');
+          border-color: map-deep-get($value, 'error', 'unchecked', 'checkbox', 'border-color');
+          color: map-deep-get($value, 'error', 'unchecked', 'checkbox', 'color');
+
+          ap-icon {
+            color: map-deep-get($value, 'error', 'unchecked', 'checkbox', 'color');
+          }
+        }
+
+        &:host([checked="true"]) {
+          .#{$component}__checkbox {
+            background-color: map-deep-get($value, 'error', 'checked', 'checkbox', 'background-color');
+            border-color: map-deep-get($value, 'error', 'checked', 'checkbox', 'border-color');
+            color: map-deep-get($value, 'error', 'checked', 'checkbox', 'color');
+
+            ap-icon {
+              color: map-deep-get($value, 'error', 'checked', 'checkbox', 'color');
+            }
+          }
+        }
+
+        &:host([indeterminate="true"]) {
+          .#{$component}__checkbox {
+            background-color: map-deep-get($value, 'error', 'checked', 'checkbox', 'background-color');
+            border-color: map-deep-get($value, 'error', 'checked', 'checkbox', 'border-color');
+            color: map-deep-get($value, 'error', 'checked', 'checkbox', 'color');
+
+            ap-icon {
+              color: map-deep-get($value, 'error', 'checked', 'checkbox', 'color');
+            }
+          }
+        }
+
+        &:host([border="true"]) {
+          border-color: map-deep-get($value, 'error', 'unchecked', 'container', 'border-color');
+          background-color: map-deep-get($value, 'error', 'unchecked', 'container', 'background-color');
+        }
+
+        @media(hover: hover) {
+          &:host(:focus-visible) {
+            .#{$component}__checkbox {
+              outline: 0.2rem solid var(--color-neutral-black);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // sizes
+  @each $key, $value in $checkbox-sizes {
+    &:host([size="#{$key}"]) {
+      column-gap: map-deep-get($value, 'gap');
+
+      .#{$component}__checkbox {
+        height: map-deep-get($value, 'checkbox', 'height');
+        width: map-deep-get($value, 'checkbox', 'width');
+        border-radius: map-deep-get($value, 'checkbox', 'border-radius');
+        border-width: map-deep-get($value, 'checkbox', 'border-width');
+      }
+
+      .#{$component}__text {
+        row-gap: map-deep-get($value, 'text', 'spacing', 'gap');
+      }
+
+      &:host([border="true"]) {
+        padding-top: map-deep-get($value, 'container', 'spacing', 'padding-top');
+        padding-right: map-deep-get($value, 'container', 'spacing', 'padding-right');
+        padding-bottom: map-deep-get($value, 'container', 'spacing', 'padding-bottom');
+        padding-left: map-deep-get($value, 'container', 'spacing', 'padding-left');
+        border-radius: map-deep-get($value, 'container', 'border-radius');
+        border-width: map-deep-get($value, 'container', 'border-width');
+      }
+    }
+  }
+}

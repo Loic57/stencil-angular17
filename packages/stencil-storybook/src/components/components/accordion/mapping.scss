@@ -1,0 +1,74 @@
+$accordion-colors: (
+  default: (
+    enable: (
+      item: (
+        border-color: var(--accordion-color-default-enable-item-border-color),
+        outline-color: var(--accordion-color-default-enable-item-outline-color),
+        trigger: (
+          background-color: var(--accordion-color-default-enable-item-trigger-background-color),
+        ),
+        content: (
+          background-color: var(--accordion-color-default-enable-item-content-background-color),
+        )
+      ),
+      container: (
+        background-color: var(--accordion-color-default-enable-container-background-color),
+        border-color: var(--accordion-color-default-enable-container-border-color)
+      )
+    ),
+    hover: (
+      item: (
+        border-color: var(--accordion-color-default-hover-item-border-color),
+        outline-color: var(--accordion-color-default-hover-item-outline-color),
+        trigger: (
+          background-color: var(--accordion-color-default-hover-item-trigger-background-color),
+        ),
+        content: (
+          background-color: var(--accordion-color-default-hover-item-content-background-color),
+        )
+      ),
+      container: (
+        background-color: var(--accordion-color-default-hover-container-background-color),
+        border-color: var(--accordion-color-default-hover-container-border-color)
+      )
+    ),
+    focus: (
+      item: (
+        border-color: var(--accordion-color-default-focus-item-border-color),
+        outline-color: var(--accordion-color-default-focus-item-outline-color),
+        trigger: (
+          background-color: var(--accordion-color-default-focus-item-trigger-background-color),
+        ),
+        content: (
+          background-color: var(--accordion-color-default-focus-item-content-background-color),
+        )
+      ),
+      container: (
+        background-color: var(--accordion-color-default-focus-container-background-color),
+        border-color: var(--accordion-color-default-focus-container-border-color)
+      )
+    )
+  )
+);
+
+$accordion-sizes: (
+  default: (
+    item: (
+      padding-top: var(--accordion-size-default-item-padding-top),
+      padding-right: var(--accordion-size-default-item-padding-right),
+      padding-bottom: var(--accordion-size-default-item-padding-bottom),
+      padding-left: var(--accordion-size-default-item-padding-left),
+      border-radius: var(--accordion-size-default-item-border-radius),
+      gap: var(--accordion-size-default-item-trigger-gap),
+    ),
+    container: (
+      border-width: var(--accordion-size-default-container-border-width),
+      border-radius: var(--accordion-size-default-container-border-radius),
+      padding-top: var(--accordion-size-default-container-padding-top),
+      padding-right: var(--accordion-size-default-container-padding-right),
+      padding-bottom: var(--accordion-size-default-container-padding-bottom),
+      padding-left: var(--accordion-size-default-container-padding-left),
+      gap: var(--accordion-size-default-container-gap),
+    )
+  )
+);

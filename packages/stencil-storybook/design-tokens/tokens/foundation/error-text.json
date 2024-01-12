@@ -1,0 +1,74 @@
+{
+  "error-text": {
+    "size": {
+      "default": {
+        "font-weight": {
+          "attributes": {
+            "type": "number"
+          },
+          "value": "{fontWeight.300}"
+        },
+        "gap": {
+          "attributes": {
+            "type": "number"
+          },
+          "value": "{spacing.4}"
+        },
+        "font-size": {
+          "attributes": {
+            "type": "number"
+          },
+          "value": "{fontSize.14}"
+        },
+        "icon": {
+          "size": {
+            "attributes": {
+              "type": "number"
+            },
+            "value": "{sizing.12}"
+          }
+        },
+        "line-height": {
+          "attributes": {
+            "type": "number"
+          },
+          "value": "{lineHeight.130}"
+        }
+      }
+    },
+    "color": {
+      "warning": {
+        "color": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{color.warning.600}"
+        }
+      },
+      "info": {
+        "color": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{color.primary.700}"
+        }
+      },
+      "success": {
+        "color": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{color.success.700}"
+        }
+      },
+      "error": {
+        "color": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{color.error.700}"
+        }
+      }
+    }
+  }
+}

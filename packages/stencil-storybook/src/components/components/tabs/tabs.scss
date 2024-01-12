@@ -1,0 +1,298 @@
+$component: ap-tabs;
+
+@import 'mapping';
+
+:host {
+  display: block;
+
+  [role="tablist"] {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-neutral-white);
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    button {
+      cursor: pointer;
+      border: 0;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      transition: 0.2s;
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+
+      &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: transparent;
+        transition: 0.2s;
+
+      }
+    }
+  }
+
+  [role="tabpanel"] {
+    padding: 2.4rem;
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+
+  @each $key, $value in $tabs-colors {
+    &:host([color="#{$key}"]) {
+      &:host([type="filled"]) {
+        [role="tablist"] {
+          background-color: map-deep-get($value, 'filled', 'container', 'background-color');
+
+          &:after {
+            background-color: map-deep-get($value, 'filled', 'container', 'border-color');
+          }
+
+          button {
+            &:not(:disabled) {
+              background-color: map-deep-get($value, 'filled', 'enabled', 'item', 'background-color');
+              color: map-deep-get($value, 'filled', 'enabled', 'item', 'color');
+
+              &:after {
+                background-color: map-deep-get($value, 'filled', 'enabled', 'item', 'border-color');
+              }
+
+              @media(hover: hover) {
+                &:hover, &:focus-visible {
+                  background-color: map-deep-get($value, 'filled', 'hover', 'item', 'background-color');
+                  border-color: map-deep-get($value, 'filled', 'hover', 'item', 'border-color');
+                  color: map-deep-get($value, 'filled', 'hover', 'item', 'color');
+                }
+
+                &:focus-visible {
+                  outline: 0.2rem solid map-deep-get($value, 'filled', 'hover', 'item', 'outline-color');
+                }
+              }
+
+              &[aria-selected="true"] {
+                background-color: map-deep-get($value, 'filled', 'selected', 'item', 'background-color');
+                border-color: map-deep-get($value, 'filled', 'selected', 'item', 'border-color');
+                color: map-deep-get($value, 'filled', 'selected', 'item', 'color');
+              }
+            }
+
+            &:disabled {
+              background-color: map-deep-get($value, 'filled', 'disabled', 'item', 'background-color');
+              color: map-deep-get($value, 'filled', 'disabled', 'item', 'color');
+
+              &:after {
+                background-color: map-deep-get($value, 'filled', 'disabled', 'item', 'border-color');
+              }
+            }
+          }
+        }
+      }
+
+      &:host([type="border"]) {
+        [role="tablist"] {
+          background-color: map-deep-get($value, 'border', 'container', 'background-color');
+
+          &:after {
+            background-color: map-deep-get($value, 'border', 'container', 'border-color');
+          }
+
+          button {
+            &:not(:disabled) {
+              background-color: map-deep-get($value, 'border', 'enabled', 'item', 'background-color');
+              color: map-deep-get($value, 'border', 'enabled', 'item', 'color');
+
+              @media(hover: hover) {
+                &:hover, &:focus-visible {
+                  background-color: map-deep-get($value, 'border', 'hover', 'item', 'background-color');
+                  color: map-deep-get($value, 'border', 'hover', 'item', 'color');
+
+                  &:after {
+                    background-color: map-deep-get($value, 'border', 'hover', 'item', 'border-color');
+                  }
+                }
+
+                &:focus-visible {
+                  outline: 0.2rem solid map-deep-get($value, 'border', 'hover', 'item', 'outline-color');
+                }
+              }
+
+              &[aria-selected="true"] {
+                background-color: map-deep-get($value, 'border', 'selected', 'item', 'background-color');
+                color: map-deep-get($value, 'border', 'selected', 'item', 'color');
+
+                &:after {
+                  background-color: map-deep-get($value, 'border', 'selected', 'item', 'border-color');
+                }
+              }
+            }
+
+            &:disabled {
+              background-color: map-deep-get($value, 'border', 'disabled', 'item', 'background-color');
+              color: map-deep-get($value, 'border', 'disabled', 'item', 'color');
+            }
+          }
+        }
+      }
+
+      &:host([type="text"]) {
+        [role="tablist"] {
+          border-color: map-deep-get($value, 'text', 'container', 'border-color');
+
+          &:after {
+            background-color: map-deep-get($value, 'text', 'container', 'border-color');
+          }
+
+          button {
+            &:not(:disabled) {
+              background-color: map-deep-get($value, 'text', 'enabled', 'item', 'background-color');
+              color: map-deep-get($value, 'text', 'enabled', 'item', 'color');
+
+              &:after {
+                background-color: map-deep-get($value, 'text', 'enabled', 'item', 'border-color');
+              }
+
+              @media(hover: hover) {
+                &:hover, &:focus-visible {
+                  background-color: map-deep-get($value, 'text', 'hover', 'item', 'background-color');
+                  border-color: map-deep-get($value, 'text', 'hover', 'item', 'border-color');
+                  color: map-deep-get($value, 'text', 'hover', 'item', 'color');
+                }
+
+                &:focus-visible {
+                  outline: 0.2rem solid map-deep-get($value, 'text', 'hover', 'item', 'outline-color');
+                }
+              }
+
+              &[aria-selected="true"] {
+                background-color: map-deep-get($value, 'text', 'selected', 'item', 'background-color');
+                border-color: map-deep-get($value, 'text', 'selected', 'item', 'border-color');
+                color: map-deep-get($value, 'text', 'selected', 'item', 'color');
+              }
+            }
+
+            &:disabled {
+              background-color: map-deep-get($value, 'text', 'disabled', 'item', 'background-color');
+              color: map-deep-get($value, 'text', 'disabled', 'item', 'color');
+
+              &:after {
+                background-color: map-deep-get($value, 'text', 'disabled', 'item', 'border-color');
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @each $key, $value in $tabs-sizes {
+    &:host([size="#{$key}"]) {
+      &:host([type="filled"]) {
+        [role="tablist"] {
+          border-radius: map-deep-get($value, 'container', 'filled', 'border-radius');
+          padding-left: map-deep-get($value, 'container', 'filled', 'padding-left');
+          padding-right: map-deep-get($value, 'container', 'filled', 'padding-right');
+          gap: map-deep-get($value, 'container', 'filled', 'gap');
+          height: map-deep-get($value, 'container', 'filled', 'height');
+
+          &:after {
+            height: map-deep-get($value, 'container', 'filled', 'border-width');
+          }
+
+          button {
+            height: map-deep-get($value, 'item', 'filled', 'height');
+            padding-top: map-deep-get($value, 'item', 'filled', 'padding-top');
+            padding-right: map-deep-get($value, 'item', 'filled', 'padding-right');
+            padding-bottom: map-deep-get($value, 'item', 'filled', 'padding-bottom');
+            padding-left: map-deep-get($value, 'item', 'filled', 'padding-left');
+            font-size: map-deep-get($value, 'item', 'filled', 'font-size');
+            gap: map-deep-get($value, 'item', 'filled', 'gap');
+            border-width: map-deep-get($value, 'item', 'filled', 'border-width');
+            border-radius: map-deep-get($value, 'item', 'filled', 'border-radius');
+
+            &:after {
+              height: map-deep-get($value, 'item', 'filled', 'border-width');
+            }
+          }
+        }
+      }
+
+      &:host([type="border"]) {
+        [role="tablist"] {
+          border-radius: map-deep-get($value, 'container', 'border', 'border-radius');
+          padding-left: map-deep-get($value, 'container', 'border', 'padding-left');
+          padding-right: map-deep-get($value, 'container', 'border', 'padding-right');
+          gap: map-deep-get($value, 'container', 'border', 'gap');
+          height: map-deep-get($value, 'container', 'border', 'height');
+
+          &:after {
+            height: map-deep-get($value, 'container', 'border', 'border-width');
+          }
+
+          button {
+            height: map-deep-get($value, 'item', 'border', 'height');
+            padding-top: map-deep-get($value, 'item', 'border', 'padding-top');
+            padding-right: map-deep-get($value, 'item', 'border', 'padding-right');
+            padding-bottom: map-deep-get($value, 'item', 'border', 'padding-bottom');
+            padding-left: map-deep-get($value, 'item', 'border', 'padding-left');
+            font-size: map-deep-get($value, 'item', 'border', 'font-size');
+            gap: map-deep-get($value, 'item', 'border', 'gap');
+            border-radius: map-deep-get($value, 'item', 'border', 'border-radius');
+
+            &:after {
+              height: map-deep-get($value, 'item', 'border', 'border-width');
+            }
+          }
+        }
+      }
+
+      &:host([type="text"]) {
+        [role="tablist"] {
+          border-radius: map-deep-get($value, 'container', 'text', 'border-radius');
+          padding-left: map-deep-get($value, 'container', 'text', 'padding-left');
+          padding-right: map-deep-get($value, 'container', 'text', 'padding-right');
+          gap: map-deep-get($value, 'container', 'text', 'gap');
+          height: map-deep-get($value, 'container', 'text', 'height');
+
+          &:after {
+            height: map-deep-get($value, 'container', 'text', 'border-width');
+          }
+
+          button {
+            height: map-deep-get($value, 'item', 'text', 'height');
+            padding-top: map-deep-get($value, 'item', 'text', 'padding-top');
+            padding-right: map-deep-get($value, 'item', 'text', 'padding-right');
+            padding-bottom: map-deep-get($value, 'item', 'text', 'padding-bottom');
+            padding-left: map-deep-get($value, 'item', 'text', 'padding-left');
+            font-size: map-deep-get($value, 'item', 'text', 'font-size');
+            gap: map-deep-get($value, 'item', 'text', 'gap');
+            border-radius: map-deep-get($value, 'item', 'text', 'border-radius');
+
+            &:after {
+              height: map-deep-get($value, 'item', 'text', 'border-width');
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+
+}

@@ -1,0 +1,23 @@
+$component: ap-segmented-buttons;
+
+:host {
+  display: flex;
+
+  ::slotted(ap-button) {
+    border-radius: 0;
+  }
+
+  ::slotted(ap-button:not(:first-child)) {
+    border-left: 0;
+  }
+
+  ::slotted(ap-button:first-child) {
+    border-top-left-radius: 6.4rem;
+    border-bottom-left-radius: 6.4rem;
+  }
+
+  ::slotted(ap-button:last-child) {
+    border-top-right-radius: 6.4rem;
+    border-bottom-right-radius: 6.4rem;
+  }
+}

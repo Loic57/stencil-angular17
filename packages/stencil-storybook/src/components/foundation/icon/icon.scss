@@ -1,0 +1,58 @@
+@import 'font';
+
+ap-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &[color="black"] {
+    color: var(--color-neutral-black);
+  }
+
+  &[color="white"] {
+    color: var(--color-neutral-white);
+  }
+
+  &[color="primary-500"] {
+    color: var(--color-primary-500);
+  }
+
+  &[rounded="true"] {
+    border-radius: 100px;
+
+    // size=4,8,12,16,20,24,28,32,36,40
+    @for $i from 1 through 10 {
+      $multiplicator: calc($i * 4);
+
+      &[size="#{$multiplicator}"] {
+        width: calc((#{$multiplicator} / 10) * 1rem);
+        height: calc((#{$multiplicator} / 10) * 1rem);
+        font-size: calc(((#{$multiplicator} / 10) * 1rem) - 2rem) ;
+      }
+    }
+
+    &[color="black"] {
+      background-color: var(--color-neutral-black);
+      color: var(--color-neutral-white);
+    }
+
+    &[color="white"] {
+      background-color: var(--color-neutral-white);
+      color: var(--color-neutral-black);
+    }
+
+    &[color="primary-500"] {
+      background-color: var(--color-primary-500);
+      color: var(--color-neutral-white);
+    }
+  }
+
+  // size=4,8,12,16,20,24,28,32,36,40
+  @for $i from 1 through 10 {
+    $multiplicator: calc($i * 4);
+
+    &[size="#{$multiplicator}"] {
+      font-size: calc((#{$multiplicator} / 10) * 1rem);
+    }
+  }
+}

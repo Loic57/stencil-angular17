@@ -1,0 +1,104 @@
+{
+  "label": {
+    "color": {
+      "black": {
+        "assistive-text": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{color.neutral.500}"
+        },
+        "label": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{color.neutral.black}"
+        },
+        "optional": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{color.neutral.500}"
+        },
+        "icon": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{color.neutral.black}"
+        }
+      }
+    },
+    "size": {
+      "default": {
+        "assistive-text": {
+          "font-size": {
+            "attributes": {
+              "type": "number"
+            },
+            "value": "{fontSize.12}"
+          },
+          "font-weight": {
+            "attributes": {
+              "type": "number"
+            },
+            "value": "{fontWeight.400}"
+          }
+        },
+        "optional": {
+          "line-height": {
+            "attributes": {
+              "type": "number"
+            },
+            "value": "{lineHeight.130}"
+          },
+          "font-weight": {
+            "attributes": {
+              "type": "number"
+            },
+            "value": "{fontWeight.400}"
+          },
+          "font-size": {
+            "attributes": {
+              "type": "number"
+            },
+            "value": "{fontSize.14}"
+          }
+        },
+        "label": {
+          "line-height": {
+            "attributes": {
+              "type": "number"
+            },
+            "value": "{lineHeight.130}"
+          },
+          "font-weight": {
+            "attributes": {
+              "type": "number"
+            },
+            "value": "{fontWeight.400}"
+          },
+          "font-size": {
+            "attributes": {
+              "type": "number"
+            },
+            "value": "{fontSize.14}"
+          }
+        },
+        "spacing-gap": {
+          "attributes": {
+            "type": "spacing"
+          },
+          "value": "{spacing.8}"
+        },
+        "icon": {
+          "size": {
+            "attributes": {
+              "type": "number"
+            },
+            "value": "{sizing.16}"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+$component: ap-panel;
+
+@import 'mapping';
+
+:host {
+  display: block;
+  color: red;
+
+  dialog {
+    width: 100%;
+    right: 0;
+    left: auto;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+  }
+
+  &:host([direction="left"]) {
+    dialog {
+      right: auto;
+      left: 0;
+    }
+  }
+
+  &:host([direction="center"]) {
+    dialog {
+      left: 0;
+      right: 0;
+      height: fit-content;
+      max-width: 60rem;
+      width: 100%;
+    }
+  }
+
+  .#{$component}__close {
+    text-align: right;
+    margin-bottom: 2.4rem;
+  }
+
+  @each $key, $value in $modal-colors {
+    &:host([color="#{$key}"]) {
+      dialog {
+        background-color: map-deep-get($value, 'dialog', 'background-color');
+        border-color: map-deep-get($value, 'dialog', 'border-color');
+
+        &::backdrop {
+          background-color: map-deep-get($value, 'backdrop', 'background-color');
+        }
+      }
+    }
+  }
+
+  @each $key, $value in $modal-sizes {
+    &:host([size="#{$key}"]) {
+      dialog {
+        border-width: map-deep-get($value, 'dialog', 'border-width');
+        padding: map-deep-get($value, 'dialog', 'padding');
+      }
+
+      &:host([direction="left"]) {
+        dialog {
+          max-width: map-deep-get($value, 'dialog', 'width', 'left');
+        }
+      }
+
+      &:host([direction="center"]) {
+        dialog {
+          max-width: map-deep-get($value, 'dialog', 'width', 'center');
+        }
+      }
+
+      &:host([direction="right"]) {
+        dialog {
+          max-width: map-deep-get($value, 'dialog', 'width', 'right');
+        }
+      }
+    }
+  }
+}
+

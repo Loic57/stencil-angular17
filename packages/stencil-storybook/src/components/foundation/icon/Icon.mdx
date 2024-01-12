@@ -1,0 +1,19 @@
+import { Meta, Title, IconGallery, IconItem } from '@storybook/blocks';
+import iconsList from '../../../utils/icons';
+
+
+<Meta title="Guidelines/Icônes" />
+
+<ap-heading size="h1" mb-64>Icônes</ap-heading>
+
+<IconGallery>
+{
+  iconsList.map((icon, index) => {
+    return (
+      <IconItem name={icon} key={index}>
+        <ap-icon icon={icon} />
+      </IconItem>
+    )
+  })
+}
+</IconGallery>

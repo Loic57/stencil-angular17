@@ -1,0 +1,40 @@
+$link-colors: (
+  primary-500: (
+    enable: (
+      color: var(--link-color-primary-500-enable-color),
+      border-color: var(--link-color-primary-500-enable-border-color),
+      icon: var(--link-color-primary-500-enable-icon)
+    ),
+    hover: (
+      color: var(--link-color-primary-500-hover-color),
+      border-color: var(--link-color-primary-500-hover-border-color),
+      icon: var(--link-color-primary-500-hover-icon)
+    ),
+    focus: (
+      color: var(--link-color-primary-500-focus-color),
+      border-color: var(--link-color-primary-500-focus-border-color),
+      icon: var(--link-color-primary-500-focus-icon)
+    )
+  )
+);
+
+$link-sizes: (
+  default: (
+    row-gap: var(--link-size-default-row-gap),
+    column-gap: var(--link-size-default-column-gap),
+    padding-top: var(--link-size-default-padding-top),
+    padding-right: var(--link-size-default-padding-right),
+    padding-bottom: var(--link-size-default-padding-bottom),
+    padding-left: var(--link-size-default-padding-left),
+    font-size: 1.6rem
+  ),
+  sm: (
+    row-gap: var(--link-size-sm-row-gap),
+    column-gap: var(--link-size-sm-column-gap),
+    padding-top: var(--link-size-sm-padding-top),
+    padding-right: var(--link-size-sm-padding-right),
+    padding-bottom: var(--link-size-sm-padding-bottom),
+    padding-left: var(--link-size-sm-padding-left),
+    font-size: 1.28rem
+  )
+);

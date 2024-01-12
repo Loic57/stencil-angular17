@@ -1,0 +1,38 @@
+$label-sizes: (
+  default: (
+    label: (
+      font-size: var(--label-size-default-label-font-size),
+      font-weight: var(--label-size-default-label-font-weight),
+      gap: var(--label-size-default-spacing-gap),
+    ),
+    optional: (
+      font-size: var(--label-size-default-optional-font-size),
+      font-weight: var(--label-size-default-optional-font-weight),
+    ),
+    icon: (
+      font-size: var(--label-default-icon-font-size),
+    ),
+    assistive-text: (
+      font-size: var(--label-size-default-assistive-text-font-size),
+      font-weight: var(--label-size-default-assistive-text-font-weight)
+    )
+  )
+);
+
+
+$label-colors: (
+  'black': (
+    label: (
+      color: var(--label-color-black-label)
+    ),
+    optional: (
+      color: var(--label-color-black-optional)
+    ),
+    icon: (
+      color: var(--label-color-black-icon)
+    ),
+    assistive-text: (
+      color: var(--label-color-black-assistive-text)
+    )
+  )
+)

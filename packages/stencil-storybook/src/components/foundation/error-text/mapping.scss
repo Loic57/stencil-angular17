@@ -1,0 +1,18 @@
+$error-text-colors: (
+  default: (
+    color: var(--error-text-color-error-color)
+  )
+);
+
+$error-text-sizes: (
+  default: (
+    font-size: var(--error-text-size-default-font-size),
+    font-weight: var(--error-text-size-default-font-weight),
+    line-height: var(--error-text-size-default-line-height),
+    gap: var(--error-text-size-default-gap),
+    icon: (
+      height: var(--error-text-default-icon-size),
+      width: var(--error-text-default-icon-size),
+    )
+  )
+);

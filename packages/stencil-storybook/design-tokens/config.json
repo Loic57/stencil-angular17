@@ -1,0 +1,37 @@
+{
+  "source": [
+    "**/core.json",
+    "**/foundation/error-text.json",
+    "**/foundation/alert.json",
+    "**/foundation/button.json",
+    "**/foundation/label.json",
+    "**/foundation/link.json",
+    "**/foundation/input.json",
+    "**/foundation/checkbox.json",
+    "**/foundation/badge.json",
+    "**/foundation/split-button.json",
+    "**/foundation/switch.json",
+    "**/foundation/tooltip.json",
+    "**/foundation/radio.json",
+    "**/components/accordion.json",
+    "**/components/breadcrumb.json",
+    "**/components/expand.json",
+    "**/components/fieldset.json",
+    "**/components/dropdown.json",
+    "**/components/tabs.json"
+  ],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "basePxFontSize": "10",
+      "transforms": ["attribute/cti", "name/cti/kebab", "color/hex", "size/pxToRem"],
+      "buildPath": "../src/styles/",
+      "files": [
+        {
+          "destination": "generated-variables.scss",
+          "format": "css/variables"
+        }
+      ]
+    }
+  }
+}

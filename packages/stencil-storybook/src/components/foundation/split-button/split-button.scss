@@ -1,0 +1,36 @@
+$component: split-button;
+
+@import 'mapping';
+
+:host {
+  display: inline-flex;
+  align-items: center;
+
+  ap-button:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  ap-button:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-style: solid;
+  }
+
+  @each $key, $value in $split-button-colors {
+    &:host([border="default"]) {
+      ap-button:last-child {
+        border-left-color: map-deep-get($value, 'border-color')
+      }
+    }
+  }
+
+  @each $key, $value in $split-button-sizes {
+    &:host([size="#{$key}"]) {
+      ap-button:last-child {
+        border-left-width: map-deep-get($value, 'border-width')
+      }
+    }
+  }
+
+}

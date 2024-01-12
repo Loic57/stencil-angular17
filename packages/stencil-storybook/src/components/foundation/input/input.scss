@@ -1,0 +1,134 @@
+$component: ap-input;
+
+@import 'mapping';
+
+:host {
+  width: 100%;
+
+  .#{$component}__input {
+    border: 0;
+    width: 100%;
+    padding: 0;
+    outline: 0;
+    background-color: transparent;
+    font-family: var(--font-1);
+  }
+
+  .#{$component}__input-container {
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    transition: 0.2s;
+    box-sizing: border-box;
+  }
+
+  // colors styles
+  @each $key, $value in $input-colors {
+    &:host([color="#{$key}"]) {
+      &:host([disabled="true"]) {
+        .#{$component}__input-container {
+          background-color: map-deep-get($value, 'disabled', 'background-color');
+          border-color: map-deep-get($value, 'disabled', 'border-color');
+          color: map-deep-get($value, 'disabled', 'value', 'color');
+        }
+
+        .#{$component}__input {
+          &::placeholder {
+            color: map-deep-get($value, 'disabled', 'placeholder', 'color');
+          }
+        }
+      }
+
+      &:host([error="true"]) {
+        .#{$component}__input-container {
+          background-color: map-deep-get($value, 'error', 'background-color');
+          border-color: map-deep-get($value, 'error', 'border-color');
+          color: map-deep-get($value, 'error', 'value', 'color');
+        }
+
+        .#{$component}__input {
+          &::placeholder {
+            color: map-deep-get($value, 'error', 'placeholder', 'color');
+          }
+        }
+      }
+
+      &:host(:not([disabled="true"])) {
+        .#{$component}__input-container {
+          background-color: map-deep-get($value, 'enable', 'background-color');
+          border-color: map-deep-get($value, 'enable', 'border-color');
+          color: map-deep-get($value, 'enable', 'value', 'color');
+        }
+
+        .#{$component}__input {
+          &::placeholder {
+            color: map-deep-get($value, 'enable', 'placeholder', 'color');
+          }
+        }
+
+        @media(hover: hover) {
+          &:host(:hover) {
+            .#{$component}__input-container {
+              background-color: map-deep-get($value, 'hover', 'background-color');
+              border-color: map-deep-get($value, 'hover', 'border-color');
+              color: map-deep-get($value, 'hover', 'value', 'color');
+            }
+
+            .#{$component}__input {
+              &::placeholder {
+                color: map-deep-get($value, 'hover', 'placeholder', 'color');
+              }
+            }
+          }
+
+          &:host(:focus) {
+            .#{$component}__input-container {
+              background-color: map-deep-get($value, 'focus', 'background-color');
+              border-color: map-deep-get($value, 'focus', 'border-color');
+              color: map-deep-get($value, 'focus', 'value', 'color');
+            }
+
+            .#{$component}__input {
+              &::placeholder {
+                color: map-deep-get($value, 'focus', 'placeholder', 'color');
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // sizes styles
+  @each $key, $value in $input-sizes {
+    &:host([size="#{$key}"]) {
+      .#{$component}__input-container {
+        border-radius: map-deep-get($value, 'border-radius');
+        border-width: map-deep-get($value, 'border-width');
+        padding-left: map-deep-get($value, 'padding', 'left');
+        padding-right: map-deep-get($value, 'padding', 'right');
+        column-gap: map-deep-get($value, 'spacing', 'gap');
+        font-size: map-deep-get($value, 'val', 'font-size');
+        font-weight: map-deep-get($value, 'val', 'font-weight');
+      }
+
+      ap-label {
+        margin-bottom: map-deep-get($value, 'spacing', 'outside');
+      }
+
+      ap-error-text {
+        margin-top: map-deep-get($value, 'spacing', 'outside');
+      }
+
+      .#{$component}__input {
+        height: map-deep-get($value, 'height');
+        font-weight: map-deep-get($value, 'val', 'font-weight');
+
+        &::placeholder {
+          font-size: map-deep-get($value, 'placeholder', 'font-size');
+          font-weight: map-deep-get($value, 'placeholder', 'font-weight');
+        }
+      }
+    }
+  }
+}

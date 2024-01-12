@@ -1,0 +1,58 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Guidelines/Espacements" />
+
+<ap-heading size="h1" mb-24>Espacements</ap-heading>
+<ap-paragraph>L'espacement est un moyen de modifier le padding ou marging sans créer de nouvelles classes.</ap-paragraph>
+
+
+<ap-heading size="h2" mt-64 mb-16>Comment ça marche </ap-heading>
+<ap-paragraph mb-16>Utilisez la propriété margin ou padding et choisissez une direction ainsi qu'une résolution. Ajoutez ensuite la taille, allant de 0 à 160 (de 8 en 8).</ap-paragraph>
+
+
+<ap-paragraph mb-8>Les propriétés:</ap-paragraph>
+<ap-paragraph>`m` - pour les classes qui set la margin</ap-paragraph>
+<ap-paragraph mb-40>`p` - pour les classes qui set le padding</ap-paragraph>
+
+
+<ap-paragraph mb-8>Les résolutions:</ap-paragraph>
+<ap-paragraph>`sm` - pour les résolutions `> 576px`</ap-paragraph>
+<ap-paragraph>`md` - pour les résolutions `> 768px`</ap-paragraph>
+<ap-paragraph>`lg` - pour les résolutions `> 992px`</ap-paragraph>
+<ap-paragraph>`xl` - pour les résolutions `> 1200px`</ap-paragraph>
+<ap-paragraph mb-40>`xxl` - pour les résolutions `> 1400px`</ap-paragraph>
+
+
+<ap-paragraph mb-8>La propriété direction s'applique à:</ap-paragraph>
+<ap-paragraph>`t` - pour `margin-top` ou `padding-top`.</ap-paragraph>
+<ap-paragraph>`b` - pour `margin-bottom` ou `padding-bottom`.</ap-paragraph>
+<ap-paragraph>`l` - pour `margin-left` ou `padding-left`.</ap-paragraph>
+<ap-paragraph>`r` - pour `margin-right` ou `padding-right`</ap-paragraph>
+<ap-paragraph mb-40>`a` - pour les quatres cotés en même temps.</ap-paragraph>
+
+
+<ap-paragraph mb-8>Exemples:</ap-paragraph>
+<ap-paragraph>`ml-0`  = `margin-left: 0px`</ap-paragraph>
+<ap-paragraph>`ml-md-0`  = `margin-left: 0px` pour les résolutions `> 768px`</ap-paragraph>
+<ap-paragraph>`mb-8`  = `margin-bottom: 8px`</ap-paragraph>
+<ap-paragraph>`mt-16`  = `margin-top: 16px`</ap-paragraph>
+<ap-paragraph>`pr-24`  = `padding-right: 24px`</ap-paragraph>
+<ap-paragraph>`pr-lg-24`  = `padding-right: 24px` pour les résolutions `> 1200px`</ap-paragraph>
+<ap-paragraph>`pb-32`  = `padding-bottom: 32px`</ap-paragraph>
+<ap-paragraph>`pl-40`  = `padding-left: 40px`</ap-paragraph>
+<ap-paragraph>`pt-48`  = `padding-top: 48px`</ap-paragraph>
+<ap-paragraph>`mr-96`  = `margin-right: 96px`</ap-paragraph>
+<ap-paragraph>`mr-sm-96`  = `margin-right: 96px` pour les résolutions `> 576px`</ap-paragraph>
+<ap-paragraph>`ma-160`  = `margin: 160px`</ap-paragraph>
+<ap-paragraph>`pa-160`  = `padding: 160px`</ap-paragraph>
+
+<style>
+  {`
+    .css-1kwwth4 {
+      background-color: var(--color-primary-100);
+      color: var(--color-primary-500);
+      border-radius: 0.4rem;
+      font-weight: 700;
+    }
+  `}
+</style>

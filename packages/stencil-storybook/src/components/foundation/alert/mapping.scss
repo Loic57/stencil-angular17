@@ -1,0 +1,87 @@
+$alert-colors: (
+  success: (
+    filled: (
+      background-color: var(--alert-color-success-filled-background-color),
+      border-color: var(--alert-color-success-filled-border-color),
+      color: var(--alert-color-success-filled-color),
+      icon: (
+        color: var(--alert-color-success-filled-icon-color)
+      )
+    ),
+    outlined: (
+      background-color: var(--alert-color-success-outlined-background-color),
+      border-color: var(--alert-color-success-outlined-border-color),
+      color: var(--alert-color-success-outlined-color),
+      icon: (
+        color: var(--alert-color-success-outlined-icon-color)
+      )
+    ),
+  ),
+  error: (
+    filled: (
+      background-color: var(--alert-color-error-filled-background-color),
+      border-color: var(--alert-color-error-filled-border-color),
+      color: var(--alert-color-error-filled-color),
+      icon: (
+        color: var(--alert-color-error-filled-icon-color)
+      )
+    ),
+    outlined: (
+      background-color: var(--alert-color-error-outlined-background-color),
+      border-color: var(--alert-color-error-outlined-border-color),
+      color: var(--alert-color-error-outlined-color),
+      icon: (
+        color: var(--alert-color-error-outlined-icon-color)
+      )
+    ),
+  ),
+  warning: (
+    filled: (
+      background-color: var(--alert-color-warning-filled-background-color),
+      border-color: var(--alert-color-warning-filled-border-color),
+      color: var(--alert-color-warning-filled-color),
+      icon: (
+        color: var(--alert-color-warning-filled-icon-color)
+      )
+    ),
+    outlined: (
+      background-color: var(--alert-color-warning-outlined-background-color),
+      border-color: var(--alert-color-warning-outlined-border-color),
+      color: var(--alert-color-warning-outlined-color),
+      icon: (
+        color: var(--alert-color-warning-outlined-icon-color)
+      )
+    )
+  ),
+  primary-500: (
+    filled: (
+      background-color: var(--alert-color-primary-500-filled-background-color),
+      border-color: var(--alert-color-primary-500-filled-border-color),
+      color: var(--alert-color-primary-500-filled-color),
+      icon: (
+        color: var(--alert-color-primary-500-filled-icon-color)
+      )
+    ),
+    outlined: (
+      background-color: var(--alert-color-primary-500-outlined-background-color),
+      border-color: var(--alert-color-primary-500-outlined-border-color),
+      color: var(--alert-color-primary-500-outlined-color),
+      icon: (
+        color: var(--alert-color-primary-500-outlined-icon-color)
+      )
+    ),
+  ),
+);
+
+$alert-sizes: (
+  default: (
+    border-radius: var(--alert-size-default-border-radius),
+    border-width: var(--alert-size-default-border-width),
+    padding-top: var(--alert-size-default-spacing-padding-top),
+    padding-right: var(--alert-size-default-spacing-padding-right),
+    padding-bottom: var(--alert-size-default-spacing-padding-bottom),
+    padding-left: var(--alert-size-default-spacing-padding-left),
+    row-gap: var(--alert-size-default-spacing-horizontal-gap),
+    column-gap: var(--alert-size-default-spacing-vertical-gap)
+  )
+);

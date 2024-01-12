@@ -1,0 +1,63 @@
+$dropdown-colors: (
+  'white': (
+    option: (
+      enable: (
+        background-color: var(--dropdown-color-white-option-enable-background-color),
+        border-color: var(  --dropdown-color-white-option-enable-border-color),
+        color: var(--dropdown-color-white-option-enable-color),
+        icon: (
+          color: var(--dropdown-color-white-option-enable-icon)
+        )
+      ),
+      hover: (
+        background-color: var(--dropdown-color-white-option-hover-background-color),
+        border-color: var(  --dropdown-color-white-option-hover-border-color),
+        color: var(--dropdown-color-white-option-hover-color),
+        icon: (
+          color: var(--dropdown-color-white-option-hover-icon)
+        )
+      ),
+      focus: (
+        background-color: var(--dropdown-color-white-option-focus-background-color),
+        border-color: var(  --dropdown-color-white-option-focus-border-color),
+        color: var(--dropdown-color-white-option-focus-color),
+        icon: (
+          color: var(--dropdown-color-white-option-focus-icon)
+        )
+      ),
+      selected: (
+        background-color: var(--dropdown-color-white-option-selected-background-color),
+        border-color: var(  --dropdown-color-white-option-selected-border-color),
+        color: var(--dropdown-color-white-option-selected-color),
+        icon: (
+          color: var(--dropdown-color-white-option-selected-icon)
+        )
+      ),
+      disabled: (
+        background-color: var(--dropdown-color-white-option-disabled-background-color),
+        border-color: var(  --dropdown-color-white-option-disabled-border-color),
+        color: var(--dropdown-color-white-option-disabled-color),
+        icon: (
+          color: var(--dropdown-color-white-option-disabled-icon)
+        )
+      )
+    )
+  )
+);
+
+$dropdown-sizes: (
+  default: (
+    option: (
+      gap: var(--dropdown-size-default-option-gap),
+      border-width: var(--dropdown-size-default-option-border-width),
+      padding-top: var(--dropdown-size-default-option-padding-top),
+      padding-right: var(--dropdown-size-default-option-padding-right),
+      padding-bottom: var(--dropdown-size-default-option-padding-bottom),
+      padding-left: var(--dropdown-size-default-option-padding-left),
+      min-height: var(--dropdown-size-default-option-height),
+      font-size: var(--dropdown-size-default-option-font-size),
+      font-weight: var(--dropdown-size-default-option-font-weight),
+      line-height: var(--dropdown-size-default-option-line-height)
+    )
+  )
+);

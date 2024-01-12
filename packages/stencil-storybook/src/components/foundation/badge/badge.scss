@@ -1,0 +1,76 @@
+$component: ap-badge;
+
+@import 'mapping';
+
+:host {
+  font-family: var(--font-1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.2s background-color, 0.2s color;
+  outline: 0;
+  border-style: solid;
+  box-sizing: border-box;
+
+  // colors styles
+  @each $key, $value in $badge-colors {
+    &:host([color="#{$key}"]) {
+      color: map-deep-get($value, 'filled', 'color');
+      background-color: map-deep-get($value, 'filled', 'background-color');
+      border-color: map-deep-get($value, 'filled', 'border-color');
+
+      ap-icon {
+        color: map-deep-get($value, 'filled', 'color');
+      }
+
+      // outlined
+      &:host([outlined="true"]) {
+        color: map-deep-get($value, 'outlined', 'color');
+        background-color: map-deep-get($value, 'outlined', 'background-color');
+        border-color: map-deep-get($value, 'outlined', 'border-color');
+
+        ap-icon {
+          color: map-deep-get($value, 'outlined', 'color');
+        }
+      }
+
+      // text-only
+      &:host([text="true"]) {
+        color: map-deep-get($value, 'text', 'color');
+        background-color: map-deep-get($value, 'text', 'background-color');
+        border-color: map-deep-get($value, 'text', 'border-color');
+
+        ap-icon {
+          color: map-deep-get($value, 'text', 'color');
+        }
+      }
+    }
+  }
+
+  // sizes styles
+  @each $key, $value in $badge-sizes {
+    &:host([size="#{$key}"]) {
+      font-size: map-deep-get($value, 'font-size');
+      font-weight: map-deep-get($value, 'font-weight');
+      height: map-deep-get($value, 'height');
+      padding-top: map-deep-get($value, 'padding-top');
+      padding-right: map-deep-get($value, 'padding-right');
+      padding-bottom: map-deep-get($value, 'padding-bottom');
+      padding-left: map-deep-get($value, 'padding-left');
+      border-radius: map-deep-get($value, 'border-radius');
+      border-width: map-deep-get($value, 'border-width');
+      column-gap: map-deep-get($value, 'gap');
+
+/*       ap-icon {
+        font-size:  map-deep-get($value, 'icon', 'font-size')
+      } */
+
+      &:host([icon-only="true"]) {
+        width: map-deep-get($value, 'height');
+        height: map-deep-get($value, 'height');
+        padding: 0;
+      }
+    }
+  }
+}

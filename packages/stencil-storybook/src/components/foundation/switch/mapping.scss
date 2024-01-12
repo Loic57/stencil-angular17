@@ -1,0 +1,138 @@
+$switch-colors: (
+  neutral-50: (
+    unchecked: (
+      enable: (
+        background-color: var(--switch-color-neutral-50-unchecked-enable-background-color),
+        border-color: var(--switch-color-neutral-50-unchecked-enable-border-color),
+        thumb: (
+          background-color: var(--switch-color-neutral-50-unchecked-enable-thumb-background-color)
+        ),
+        icon: (
+          left: var(--switch-color-neutral-50-unchecked-enable-icon-left),
+          right: var(--switch-color-neutral-50-unchecked-enable-icon-right)
+        )
+      ),
+      hover: (
+        background-color: var(--switch-color-neutral-50-unchecked-hover-background-color),
+        border-color: var(--switch-color-neutral-50-unchecked-hover-border-color),
+        thumb: (
+          background-color: var(--switch-color-neutral-50-unchecked-hover-thumb-background-color)
+        ),
+        icon: (
+          left: var(--switch-color-neutral-50-unchecked-hover-icon-left),
+          right: var(--switch-color-neutral-50-unchecked-hover-icon-right)
+        )
+      ),
+      focus: (
+        background-color: var(--switch-color-neutral-50-unchecked-focus-background-color),
+        border-color: var(--switch-color-neutral-50-unchecked-focus-border-color),
+        thumb: (
+          background-color: var(--switch-color-neutral-50-unchecked-focus-thumb-background-color)
+        ),
+        icon: (
+          left: var(--switch-color-neutral-50-unchecked-focus-icon-left),
+          right: var(--switch-color-neutral-50-unchecked-focus-icon-right)
+        )
+      ),
+      disabled: (
+        background-color: var(--switch-color-neutral-50-unchecked-disabled-background-color),
+        border-color: var(--switch-color-neutral-50-unchecked-disabled-border-color),
+        thumb: (
+          background-color: var(--switch-color-neutral-50-unchecked-disabled-thumb-background-color)
+        ),
+        icon: (
+          left: var(--switch-color-neutral-50-unchecked-disabled-icon-left),
+          right: var(--switch-color-neutral-50-unchecked-disabled-icon-right)
+        )
+      ),
+      error: (
+        background-color: var(--switch-color-neutral-50-unchecked-error-background-color),
+        border-color: var(--switch-color-neutral-50-unchecked-error-border-color),
+        thumb: (
+          background-color: var(--switch-color-neutral-50-unchecked-error-thumb-background-color)
+        ),
+        icon: (
+          left: var(--switch-color-neutral-50-unchecked-error-icon-left),
+          right: var(--switch-color-neutral-50-unchecked-error-icon-right)
+        )
+      )
+    ),
+    checked: (
+      enable: (
+        background-color: var(--switch-color-neutral-50-checked-enable-background-color),
+        border-color: var(--switch-color-neutral-50-checked-enable-border-color),
+        thumb: (
+          background-color: var(--switch-color-neutral-50-checked-enable-thumb-background-color)
+        ),
+        icon: (
+          left: var(--switch-color-neutral-50-checked-enable-icon-left),
+          right: var(--switch-color-neutral-50-checked-enable-icon-right)
+        )
+      ),
+      hover: (
+        background-color: var(--switch-color-neutral-50-checked-hover-background-color),
+        border-color: var(--switch-color-neutral-50-checked-hover-border-color),
+        thumb: (
+          background-color: var(--switch-color-neutral-50-checked-hover-thumb-background-color)
+        ),
+        icon: (
+          left: var(--switch-color-neutral-50-checked-hover-icon-left),
+          right: var(--switch-color-neutral-50-checked-hover-icon-right)
+        )
+      ),
+      focus: (
+        background-color: var(--switch-color-neutral-50-checked-focus-background-color),
+        border-color: var(--switch-color-neutral-50-checked-focus-border-color),
+        thumb: (
+          background-color: var(--switch-color-neutral-50-checked-focus-thumb-background-color)
+        ),
+        icon: (
+          left: var(--switch-color-neutral-50-checked-focus-icon-left),
+          right: var(--switch-color-neutral-50-checked-focus-icon-right)
+        )
+      ),
+      disabled: (
+        background-color: var(--switch-color-neutral-50-checked-disabled-background-color),
+        border-color: var(--switch-color-neutral-50-checked-disabled-border-color),
+        thumb: (
+          background-color: var(--switch-color-neutral-50-checked-disabled-thumb-background-color)
+        ),
+        icon: (
+          left: var(--switch-color-neutral-50-checked-disabled-icon-left),
+          right: var(--switch-color-neutral-50-checked-disabled-icon-right)
+        )
+      ),
+      error: (
+        background-color: var(--switch-color-neutral-50-checked-error-background-color),
+        border-color: var(--switch-color-neutral-50-checked-error-border-color),
+        thumb: (
+          background-color: var(--switch-color-neutral-50-checked-error-thumb-background-color)
+        ),
+        icon: (
+          left: var(--switch-color-neutral-50-checked-error-icon-left),
+          right: var(--switch-color-neutral-50-checked-error-icon-right)
+        )
+      )
+    )
+  )
+);
+
+$switch-sizes: (
+  default: (
+    padding-top: var(--switch-size-default-padding-top),
+    padding-right: var(--switch-size-default-padding-right),
+    padding-bottom: var(--switch-size-default-padding-bottom),
+    padding-left: var(--switch-size-default-padding-left),
+    border-radius: var(--switch-size-default-border-radius),
+    gap: var(--switch-size-default-gap),
+    width: var(--switch-size-default-width),
+    height: var(--switch-size-default-height),
+    thumb: (
+      height: var(--switch-size-default-thumb-height),
+      width: var(--switch-size-default-thumb-width)
+    ),
+    icon: (
+      width: var(--switch-size-default-icon-width)
+    )
+  )
+)

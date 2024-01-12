@@ -1,0 +1,155 @@
+$component: ap-dropdown;
+
+@import 'mapping';
+
+:host {
+  position: relative;
+
+  .#{$component}__content {
+    box-shadow: var(--elevation-2);
+    border-radius: 0.4rem;
+    margin: 0;
+    padding: 0;
+    display: none;
+    max-height: 30rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  .#{$component}__item {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-1);
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: 0;
+    transition: 0.2s;
+
+    &--disabled {
+      cursor: not-allowed;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  .#{$component}__trigger {
+    margin-bottom: 0.8rem;
+  }
+
+  .#{$component}__badges-container {
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    height: var(--input-size-default-input-height);
+    border-width: var(--input-size-default-input-border-width);
+    padding-right: var(--input-size-default-input-padding-right);
+    padding-left: var(--input-size-default-input-padding-left);
+    border-radius: var(--input-size-default-input-border-radius);
+    gap: var(--input-size-default-input-spacing-gap);
+
+    margin-top: var(--input-size-default-input-spacing-outside);
+
+    border-color: var(--input-color-neutral-50-enable-border-color);
+    background-color: var(--input-color-neutral-50-enable-background-color);
+
+    ap-badge {
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:focus-visible {
+        background-color: var(--color-primary-900);
+      }
+    }
+
+    color: var(--input-color-neutral-50-enable-placeholder);
+    font-weight: var(--input-size-default-input-placeholder-font-weight);
+    font-size: var(--input-size-default-input-placeholder-font-size);
+    font-family: var(--font-1);
+  }
+
+  @each $key, $value in $dropdown-colors {
+    &:host([color="#{$key}"]) {
+      .#{$component}__item:not(.#{$component}__item--disabled):not(.#{$component}__item--selected) {
+        background-color: map-deep-get($value, 'option', 'enable', 'background-color');
+        border-color: map-deep-get($value, 'option', 'enable', 'border-color');
+        color: map-deep-get($value, 'option', 'enable', 'color');
+
+        &.#{$component}__item--search {
+          background-color: var(--color-neutral-white);
+
+          &:focus-visible, &:hover {
+            background-color: var(--color-neutral-white);
+          }
+        }
+
+        &.#{$component}__item--focused {
+          background-color: map-deep-get($value, 'option', 'focus', 'background-color');
+          border-color: map-deep-get($value, 'option', 'focus', 'border-color');
+          color: map-deep-get($value, 'option', 'focus', 'color');
+        }
+
+        @media(hover: hover) {
+          &:hover {
+            background-color: map-deep-get($value, 'option', 'hover', 'background-color');
+            border-color: map-deep-get($value, 'option', 'hover', 'border-color');
+            color: map-deep-get($value, 'option', 'hover', 'color');
+          }
+
+          &:focus-visible {
+            background-color: map-deep-get($value, 'option', 'focus', 'background-color');
+            border-color: map-deep-get($value, 'option', 'focus', 'border-color');
+            color: map-deep-get($value, 'option', 'focus', 'color');
+          }
+        }
+      }
+
+      .#{$component}__item--disabled {
+        //background-color: map-deep-get($value, 'option', 'disabled', 'background-color');
+        border-color: map-deep-get($value, 'option', 'disabled', 'border-color');
+        color: map-deep-get($value, 'option', 'disabled', 'color');
+      }
+
+      .#{$component}__item--selected {
+        background-color: map-deep-get($value, 'option', 'selected', 'background-color');
+        border-color: map-deep-get($value, 'option', 'selected', 'border-color');
+        color: map-deep-get($value, 'option', 'selected', 'color');
+
+        &:focus-visible, &:hover {
+          background-color: var(--color-primary-900);
+        }
+      }
+    }
+  }
+
+  @each $key, $value in $dropdown-sizes {
+    &:host([size="#{$key}"]) {
+      .#{$component}__item {
+        padding-top: map-deep-get($value, 'option', 'padding-top');
+        padding-right: map-deep-get($value, 'option', 'padding-right');
+        padding-bottom: map-deep-get($value, 'option', 'padding-bottom');
+        padding-left: map-deep-get($value, 'option', 'padding-left');
+        border-width: map-deep-get($value, 'option', 'border-width');
+        gap: map-deep-get($value, 'option', 'gap');
+        min-height: map-deep-get($value, 'option', 'min-height');
+        font-size: map-deep-get($value, 'option', 'font-size');
+        font-weight: map-deep-get($value, 'option', 'font-weight');
+        line-height: calc(map-deep-get($value, 'option', 'line-height') / 10rem);
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+$expand-colors: (
+  default: (
+    trigger: (
+      background-color: var(--expand-color-default-trigger-background-color),
+      border-color: var(--expand-color-default-trigger-border-color)
+    ),
+    content: (
+      border-color: var(--expand-color-default-content-border-color)
+    )
+  )
+);
+
+$expand-sizes: (
+  default: (
+    border-width: var(--expand-size-default-border-width),
+    trigger: (
+      border-radius: var(--expand-size-default-border-radius),
+      padding-top: var(--expand-size-default-trigger-padding-top),
+      padding-right: var(--expand-size-default-trigger-padding-right),
+      padding-bottom: var(--expand-size-default-trigger-padding-bottom),
+      padding-left: var(--expand-size-default-trigger-padding-left),
+    )
+  )
+)

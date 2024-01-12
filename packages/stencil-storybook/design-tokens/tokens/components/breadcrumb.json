@@ -1,0 +1,24 @@
+{
+  "breadcrumb": {
+    "color": {
+      "default": {
+        "icon": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{color.primary.500}"
+        }
+      }
+    },
+    "size": {
+      "default": {
+        "gap": {
+          "attributes": {
+            "type": "number"
+          },
+          "value": "{spacing.8}"
+        }
+      }
+    }
+  }
+}

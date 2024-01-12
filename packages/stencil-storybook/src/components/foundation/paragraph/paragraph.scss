@@ -1,0 +1,36 @@
+
+$component: ap-paragraph;
+
+
+@import './mapping';
+
+:host {
+  display: block;
+  letter-spacing: 0.5px;
+
+  .#{$component} {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: var(--font-1);
+  }
+
+  @each $key, $value in $paragraph-colors {
+    &:host([color="#{$key}"]) {
+      .#{$component} {
+        color: map-deep-get($value, 'color');
+      }
+    }
+  }
+
+
+  @each $key, $value in $paragraph-sizes {
+    &:host([size="#{$key}"]) {
+      .#{$component} {
+        font-size: map-deep-get($value, 'font-size');
+        line-height: calc(15rem/10rem);
+      }
+    }
+  }
+}
+
+

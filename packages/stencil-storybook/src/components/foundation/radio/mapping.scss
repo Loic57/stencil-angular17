@@ -1,0 +1,153 @@
+$radio-colors: (
+  primary-500: (
+    box-shadow: var(--elevation-2),
+    enable: (
+      unchecked: (
+        radio: (
+          background-color: var(--radio-color-primary-500-enable-unchecked-radio-background-color),
+          border-color: var(--radio-color-primary-500-enable-unchecked-radio-border-color),
+          color: var(--radio-color-primary-500-enable-unchecked-radio-color),
+        ),
+        container: (
+          background-color: var(--radio-color-primary-500-enable-unchecked-container-background-color),
+          border-color: var(--radio-color-primary-500-enable-unchecked-container-border-color)
+        )
+      ),
+      checked: (
+        radio: (
+          background-color: var(--radio-color-primary-500-enable-checked-radio-background-color),
+          border-color: var(--radio-color-primary-500-enable-checked-radio-border-color),
+          color: var(--radio-color-primary-500-enable-checked-radio-color),
+        ),
+        container: (
+          background-color: var(--radio-color-primary-500-enable-checked-container-background-color),
+          border-color: var(--radio-color-primary-500-enable-checked-container-border-color)
+        )
+      )
+    ),
+    hover: (
+      unchecked: (
+        radio: (
+          background-color: var(--radio-color-primary-500-hover-unchecked-radio-background-color),
+          border-color: var(--radio-color-primary-500-hover-unchecked-radio-border-color),
+          color: var(--radio-color-primary-500-hover-unchecked-radio-color),
+        ),
+        container: (
+          background-color: var(--radio-color-primary-500-hover-unchecked-container-background-color),
+          border-color: var(--radio-color-primary-500-hover-unchecked-container-border-color)
+        )
+      ),
+      checked: (
+        radio: (
+          background-color: var(--radio-color-primary-500-hover-checked-radio-background-color),
+          border-color: var(--radio-color-primary-500-hover-checked-radio-border-color),
+          color: var(--radio-color-primary-500-hover-checked-radio-color),
+        ),
+        container: (
+          background-color: var(--radio-color-primary-500-hover-checked-container-background-color),
+          border-color: var(--radio-color-primary-500-hover-checked-container-border-color)
+        )
+      )
+    ),
+    focus: (
+      unchecked: (
+        radio: (
+          background-color: var(--radio-color-primary-500-focus-unchecked-radio-background-color),
+          border-color: var(--radio-color-primary-500-focus-unchecked-radio-border-color),
+          color: var(--radio-color-primary-500-focus-unchecked-radio-color),
+        ),
+        container: (
+          background-color: var(--radio-color-primary-500-focus-unchecked-container-background-color),
+          border-color: var(--radio-color-primary-500-focus-unchecked-container-border-color)
+        )
+      ),
+      checked: (
+        radio: (
+          background-color: var(--radio-color-primary-500-focus-checked-radio-background-color),
+          border-color: var(--radio-color-primary-500-focus-checked-radio-border-color),
+          color: var(--radio-color-primary-500-focus-checked-radio-color),
+        ),
+        container: (
+          background-color: var(--radio-color-primary-500-focus-checked-container-background-color),
+          border-color: var(--radio-color-primary-500-focus-checked-container-border-color)
+        )
+      )
+    ),
+    disabled: (
+      unchecked: (
+        radio: (
+          background-color: var(--radio-color-primary-500-disabled-unchecked-radio-background-color),
+          border-color: var(--radio-color-primary-500-disabled-unchecked-radio-border-color),
+          color: var(--radio-color-primary-500-disabled-unchecked-radio-color),
+        ),
+        container: (
+          background-color: var(--radio-color-primary-500-disabled-unchecked-container-background-color),
+          border-color: var(--radio-color-primary-500-disabled-unchecked-container-border-color)
+        )
+      ),
+      checked: (
+        radio: (
+          background-color: var(--radio-color-primary-500-disabled-checked-radio-background-color),
+          border-color: var(--radio-color-primary-500-disabled-checked-radio-border-color),
+          color: var(--radio-color-primary-500-disabled-checked-radio-color),
+        ),
+        container: (
+          background-color: var(--radio-color-primary-500-disabled-checked-container-background-color),
+          border-color: var(--radio-color-primary-500-disabled-checked-container-border-color)
+        )
+      )
+    ),
+    error: (
+      unchecked: (
+        radio: (
+          background-color: var(--radio-color-primary-500-error-unchecked-radio-background-color),
+          border-color: var(--radio-color-primary-500-error-unchecked-radio-border-color),
+          color: var(--radio-color-primary-500-error-unchecked-radio-color),
+        ),
+        container: (
+          background-color: var(--radio-color-primary-500-error-unchecked-container-background-color),
+          border-color: var(--radio-color-primary-500-error-unchecked-container-border-color)
+        )
+      ),
+      checked: (
+        radio: (
+          background-color: var(--radio-color-primary-500-error-checked-radio-background-color),
+          border-color: var(--radio-color-primary-500-error-checked-radio-border-color),
+          color: var(--radio-color-primary-500-error-checked-radio-color),
+        ),
+        container: (
+          background-color: var(--radio-color-primary-500-error-checked-container-background-color),
+          border-color: var(--radio-color-primary-500-error-checked-container-border-color)
+        )
+      )
+    )
+  )
+);
+
+
+$radio-sizes: (
+  default: (
+    gap: var(--radio-size-default-gap),
+    radio: (
+      height: var(--radio-size-default-radio-height),
+      width: var(--radio-size-default-radio-width),
+      border-radius: var(--radio-size-default-radio-border-radius),
+      border-width: var(--radio-size-default-radio-border-width),
+    ),
+    container: (
+      spacing: (
+        padding-top: var(--radio-size-default-container-padding-top),
+        padding-right: var(--radio-size-default-container-padding-right),
+        padding-bottom: var(--radio-size-default-container-padding-bottom),
+        padding-left: var(--radio-size-default-container-padding-left),
+      ),
+      border-radius: var(--radio-size-default-container-border-radius),
+      border-width: var(--radio-size-default-container-border-width),
+    ),
+    text: (
+      spacing: (
+        gap: 0.8rem
+      )
+    )
+  )
+);

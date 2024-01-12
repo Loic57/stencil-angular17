@@ -1,0 +1,28 @@
+$component: ap-accordion;
+
+@import 'mapping';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+
+  @each $key, $value in $accordion-colors {
+    &:host([color="#{$key}"]) {
+      background-color: map-deep-get($value, 'enable', 'container', 'background-color');
+      border-color: map-deep-get($value, 'enable', 'container', 'border-color');
+    }
+  }
+
+  @each $key, $value in $accordion-sizes {
+    &:host([size="#{$key}"]) {
+      row-gap: map-deep-get($value, 'container', 'gap');
+      border-radius: map-deep-get($value, 'container', 'border-radius');
+      border-width: map-deep-get($value, 'container', 'border-width');
+      padding-top: map-deep-get($value, 'container', 'padding-top');
+      padding-right: map-deep-get($value, 'container', 'padding-right');
+      padding-bottom: map-deep-get($value, 'container', 'padding-bottom');
+      padding-left: map-deep-get($value, 'container', 'padding-left');
+    }
+  }
+}

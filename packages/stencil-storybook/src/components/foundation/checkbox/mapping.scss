@@ -1,0 +1,153 @@
+$checkbox-colors: (
+  primary-500: (
+    box-shadow: var(--elevation-2),
+    enable: (
+      unchecked: (
+        checkbox: (
+          background-color: var(--checkbox-color-primary-500-enable-unchecked-checkbox-background-color),
+          border-color: var(--checkbox-color-primary-500-enable-unchecked-checkbox-border-color),
+          color: var(--checkbox-color-primary-500-enable-unchecked-checkbox-color),
+        ),
+        container: (
+          background-color: var(--checkbox-color-primary-500-enable-unchecked-container-background-color),
+          border-color: var(--checkbox-color-primary-500-enable-unchecked-container-border-color)
+        )
+      ),
+      checked: (
+        checkbox: (
+          background-color: var(--checkbox-color-primary-500-enable-checked-checkbox-background-color),
+          border-color: var(--checkbox-color-primary-500-enable-checked-checkbox-border-color),
+          color: var(--checkbox-color-primary-500-enable-checked-checkbox-color),
+        ),
+        container: (
+          background-color: var(--checkbox-color-primary-500-enable-checked-container-background-color),
+          border-color: var(--checkbox-color-primary-500-enable-checked-container-border-color)
+        )
+      )
+    ),
+    hover: (
+      unchecked: (
+        checkbox: (
+          background-color: var(--checkbox-color-primary-500-hover-unchecked-checkbox-background-color),
+          border-color: var(--checkbox-color-primary-500-hover-unchecked-checkbox-border-color),
+          color: var(--checkbox-color-primary-500-hover-unchecked-checkbox-color),
+        ),
+        container: (
+          background-color: var(--checkbox-color-primary-500-hover-unchecked-container-background-color),
+          border-color: var(--checkbox-color-primary-500-hover-unchecked-container-border-color)
+        )
+      ),
+      checked: (
+        checkbox: (
+          background-color: var(--checkbox-color-primary-500-hover-checked-checkbox-background-color),
+          border-color: var(--checkbox-color-primary-500-hover-checked-checkbox-border-color),
+          color: var(--checkbox-color-primary-500-hover-checked-checkbox-color),
+        ),
+        container: (
+          background-color: var(--checkbox-color-primary-500-hover-checked-container-background-color),
+          border-color: var(--checkbox-color-primary-500-hover-checked-container-border-color)
+        )
+      )
+    ),
+    focus: (
+      unchecked: (
+        checkbox: (
+          background-color: var(--checkbox-color-primary-500-focus-unchecked-checkbox-background-color),
+          border-color: var(--checkbox-color-primary-500-focus-unchecked-checkbox-border-color),
+          color: var(--checkbox-color-primary-500-focus-unchecked-checkbox-color),
+        ),
+        container: (
+          background-color: var(--checkbox-color-primary-500-focus-unchecked-container-background-color),
+          border-color: var(--checkbox-color-primary-500-focus-unchecked-container-border-color)
+        )
+      ),
+      checked: (
+        checkbox: (
+          background-color: var(--checkbox-color-primary-500-focus-checked-checkbox-background-color),
+          border-color: var(--checkbox-color-primary-500-focus-checked-checkbox-border-color),
+          color: var(--checkbox-color-primary-500-focus-checked-checkbox-color),
+        ),
+        container: (
+          background-color: var(--checkbox-color-primary-500-focus-checked-container-background-color),
+          border-color: var(--checkbox-color-primary-500-focus-checked-container-border-color)
+        )
+      )
+    ),
+    disabled: (
+      unchecked: (
+        checkbox: (
+          background-color: var(--checkbox-color-primary-500-disabled-unchecked-checkbox-background-color),
+          border-color: var(--checkbox-color-primary-500-disabled-unchecked-checkbox-border-color),
+          color: var(--checkbox-color-primary-500-disabled-unchecked-checkbox-color),
+        ),
+        container: (
+          background-color: var(--checkbox-color-primary-500-disabled-unchecked-container-background-color),
+          border-color: var(--checkbox-color-primary-500-disabled-unchecked-container-border-color)
+        )
+      ),
+      checked: (
+        checkbox: (
+          background-color: var(--checkbox-color-primary-500-disabled-checked-checkbox-background-color),
+          border-color: var(--checkbox-color-primary-500-disabled-checked-checkbox-border-color),
+          color: var(--checkbox-color-primary-500-disabled-checked-checkbox-color),
+        ),
+        container: (
+          background-color: var(--checkbox-color-primary-500-disabled-checked-container-background-color),
+          border-color: var(--checkbox-color-primary-500-disabled-checked-container-border-color)
+        )
+      )
+    ),
+    error: (
+      unchecked: (
+        checkbox: (
+          background-color: var(--checkbox-color-primary-500-error-unchecked-checkbox-background-color),
+          border-color: var(--checkbox-color-primary-500-error-unchecked-checkbox-border-color),
+          color: var(--checkbox-color-primary-500-error-unchecked-checkbox-color),
+        ),
+        container: (
+          background-color: var(--checkbox-color-primary-500-error-unchecked-container-background-color),
+          border-color: var(--checkbox-color-primary-500-error-unchecked-container-border-color)
+        )
+      ),
+      checked: (
+        checkbox: (
+          background-color: var(--checkbox-color-primary-500-error-checked-checkbox-background-color),
+          border-color: var(--checkbox-color-primary-500-error-checked-checkbox-border-color),
+          color: var(--checkbox-color-primary-500-error-checked-checkbox-color),
+        ),
+        container: (
+          background-color: var(--checkbox-color-primary-500-error-checked-container-background-color),
+          border-color: var(--checkbox-color-primary-500-error-checked-container-border-color)
+        )
+      )
+    )
+  )
+);
+
+
+$checkbox-sizes: (
+  default: (
+    gap: var(--checkbox-size-default-gap),
+    checkbox: (
+      height: var(--checkbox-size-default-checkbox-height),
+      width: var(--checkbox-size-default-checkbox-width),
+      border-radius: var(--checkbox-size-default-checkbox-border-radius),
+      border-width: var(--checkbox-size-default-checkbox-border-width),
+    ),
+    container: (
+      spacing: (
+        padding-top: var(--checkbox-size-default-container-padding-top),
+        padding-right: var(--checkbox-size-default-container-padding-right),
+        padding-bottom: var(--checkbox-size-default-container-padding-bottom),
+        padding-left: var(--checkbox-size-default-container-padding-left),
+      ),
+      border-radius: var(--checkbox-size-default-container-border-radius),
+      border-width: var(--checkbox-size-default-container-border-width),
+    ),
+    text: (
+      spacing: (
+        gap: 0.8rem
+      )
+    )
+  )
+);

@@ -1,0 +1,45 @@
+$component: ap-expand;
+
+:host {
+  display: block;
+  width: 100%;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-color: var(--color-neutral-200);
+  border-radius: 0.8rem;
+
+  .#{$component}__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 2.4rem;
+    column-gap: 1.6rem;
+    position: relative;
+
+    &--narrow {
+      justify-content: flex-start;
+    }
+
+    ap-button {
+      &:after {
+        position: absolute;
+        content: "";
+        inset: 0;
+      }
+    }
+  }
+
+  .#{$component}__content {
+    overflow: hidden;
+    transition: height 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    height: 0;
+
+    .inner {
+      border-top: 0.1rem solid var(--color-neutral-100);
+      padding-left: 2.4rem;
+      padding-right: 2.4rem;
+      padding-top: 2.4rem;
+      padding-bottom: 2.4rem;
+    }
+  }
+}

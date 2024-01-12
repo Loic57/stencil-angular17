@@ -1,0 +1,26 @@
+$modal-colors: (
+  default: (
+    dialog: (
+      background-color: var(--color-neutral-white),
+      border-color: var(--color-neutral-white)
+    ),
+    backdrop: (
+      background-color: #00000050
+    )
+  )
+);
+
+$modal-sizes: (
+  default: (
+    dialog: (
+      border-radius: 0,
+      border-width: 0,
+      width: (
+        left: 40rem,
+        center: 60rem,
+        right: 40rem
+      ),
+      padding: 3.2rem
+    )
+  )
+)

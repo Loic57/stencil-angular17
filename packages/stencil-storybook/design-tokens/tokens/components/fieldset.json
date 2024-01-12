@@ -1,0 +1,62 @@
+{
+  "fieldset": {
+    "size": {
+      "default": {
+        "border-width": {
+          "attributes": {
+            "type": "number"
+          },
+          "value": "{borderWidth.1}"
+        },
+        "padding-bottom": {
+          "attributes": {
+            "type": "number"
+          },
+          "value": "{spacing.24}"
+        },
+        "padding-right": {
+          "attributes": {
+            "type": "number"
+          },
+          "value": "{spacing.24}"
+        },
+        "padding-top": {
+          "attributes": {
+            "type": "number"
+          },
+          "value": "{spacing.24}"
+        },
+        "padding-left": {
+          "attributes": {
+            "type": "number"
+          },
+          "value": "{spacing.24}"
+        },
+        "border-radius": {
+          "attributes": {
+            "type": "number"
+          },
+          "value": "{borderRadius.4}"
+        }
+      }
+    },
+    "Number": {
+      "attributes": {
+        "type": "number"
+      },
+      "value": 0
+    },
+    "color": {
+      "neutral": {
+        "200": {
+          "border-color": {
+            "attributes": {
+              "category": "color"
+            },
+            "value": "{color.neutral.200}"
+          }
+        }
+      }
+    }
+  }
+}

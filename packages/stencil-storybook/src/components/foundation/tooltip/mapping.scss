@@ -1,0 +1,18 @@
+$tooltip-colors: (
+  default: (
+    background-color: var(--tooltip-color-default-background-color),
+    color: var(--tooltip-color-default-color)
+  )
+);
+
+$tooltip-sizes: (
+  default: (
+    border-radius: var(--tooltip-size-default-border-radius),
+    padding-top: var(--tooltip-size-default-padding-top),
+    padding-right: var(--tooltip-size-default-padding-right),
+    padding-bottom: var(--tooltip-size-default-padding-bottom),
+    padding-left: var(--tooltip-size-default-padding-left),
+    font-size: var(--tooltip-size-default-font-size),
+    line-height: var(--tooltip-size-default-line-height)
+  )
+)

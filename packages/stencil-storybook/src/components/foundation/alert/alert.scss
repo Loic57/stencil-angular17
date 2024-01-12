@@ -1,0 +1,83 @@
+$component: ap-alert;
+
+@import 'mapping';
+
+:host {
+  letter-spacing: 0.04px;
+  display: flex;
+  border-style: solid;
+  position: relative;
+
+  .#{$component}__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::slotted([slot="buttons"]) {
+    display: inline-flex;
+  }
+
+  @each $key, $value in $alert-colors {
+    &:host([color="#{$key}"]) {
+      background-color: map-deep-get($value, 'filled', 'background-color');
+      border-color: map-deep-get($value, 'filled', 'border-color');
+      color: map-deep-get($value, 'filled', 'color');
+
+      ap-icon {
+        color: map-deep-get($value, 'filled', 'icon', 'color');
+      }
+
+      ap-heading {
+        color: map-deep-get($value, 'filled', 'color');
+      }
+
+      ap-paragraph {
+        color: map-deep-get($value, 'filled', 'color');
+      }
+
+      &:host([outlined="true"]) {
+        background-color: map-deep-get($value, 'outlined', 'background-color');
+        border-color: map-deep-get($value, 'outlined', 'border-color');
+        color: map-deep-get($value, 'outlined', 'color');
+
+        ap-icon {
+          color: map-deep-get($value, 'outlined', 'icon', 'color');
+        }
+
+        ap-heading {
+          color: map-deep-get($value, 'outlined', 'color');
+        }
+
+        ap-paragraph {
+          color: map-deep-get($value, 'outlined', 'color');
+        }
+      }
+    }
+  }
+
+  @each $key, $value in $alert-sizes {
+    &:host([size="#{$key}"]) {
+      padding-top: map-deep-get($value, 'padding-top');
+      padding-right: map-deep-get($value, 'padding-right');
+      padding-bottom: map-deep-get($value, 'padding-bottom');
+      padding-left: map-deep-get($value, 'padding-left');
+      column-gap: map-deep-get($value, 'column-gap');
+      border-width: map-deep-get($value, 'border-width');
+      border-radius: map-deep-get($value, 'border-radius');
+
+      .#{$component}__content {
+        row-gap: map-deep-get($value, 'row-gap');
+      }
+
+      .#{$component}__close {
+        position: absolute;
+        right: 0.8rem;
+        top: 0.8rem;
+      }
+
+      ::slotted([slot="buttons"]) {
+        column-gap: calc(map-deep-get($value, 'column-gap') / 2);
+      }
+    }
+  }
+}

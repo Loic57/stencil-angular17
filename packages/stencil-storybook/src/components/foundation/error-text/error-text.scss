@@ -1,0 +1,27 @@
+$component: ap-error-text;
+
+@import 'mapping';
+
+:host {
+  display: inline-flex;
+  font-family: var(--font-1);
+
+  @each $key, $value in $error-text-colors {
+    &:host([color="#{$key}"]) {
+      color: map-deep-get($value, 'color');
+
+      ap-icon {
+        color: map-deep-get($value, 'color');
+      }
+    }
+  }
+
+  @each $key, $value in $error-text-sizes {
+    &:host([size="#{$key}"]) {
+      font-size: map-deep-get($value, 'font-size');
+      font-weight: map-deep-get($value, 'font-weight');
+      line-height: map-deep-get($value, 'line-height') / 10;
+      column-gap: map-deep-get($value, 'gap');
+    }
+  }
+}

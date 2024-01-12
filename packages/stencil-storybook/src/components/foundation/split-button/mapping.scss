@@ -1,0 +1,11 @@
+$split-button-colors: (
+  default: (
+    border-color: var(--split-button-color-default-border-color)
+  )
+);
+
+$split-button-sizes: (
+  default: (
+    border-width: var(--split-button-size-default-border-width)
+  )
+);

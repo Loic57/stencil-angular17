@@ -1,0 +1,33 @@
+$component: ap-fieldset;
+
+@import 'mapping';
+
+:host {
+  slot {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @each $key, $value in $fieldset-colors {
+    &:host([color="#{$key}"]) {
+      border-color: map-deep-get($value, 'border-color');
+    }
+  }
+
+  @each $key, $value in $fieldset-sizes {
+    &:host([size="#{$key}"]) {
+      fieldset {
+        padding-top: map-deep-get($value, 'padding-top');
+        padding-right: map-deep-get($value, 'padding-right');
+        padding-bottom: map-deep-get($value, 'padding-bottom');
+        padding-left: map-deep-get($value, 'padding-left');
+        border-width: map-deep-get($value, 'border-width');
+        border-radius: map-deep-get($value, 'border-radius');
+
+        slot {
+          gap: 1.6rem;
+        }
+      }
+    }
+  }
+}

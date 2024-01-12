@@ -1,0 +1,120 @@
+$component: ap-label;
+
+@import 'mapping';
+
+:host {
+  font-family: var(--font-1);
+  display: block;
+
+  .#{$component} {
+    display: inline-flex;
+    align-items: center;
+
+    &__assistive-text {
+      font-style: italic;
+    }
+  }
+
+  @each $key, $value in $label-colors {
+    &:host([color="#{$key}"]) {
+      .#{$component} {
+        label {
+          color: map-deep-get($value, 'label', 'color');
+        }
+      }
+
+      .#{$component}__assistive-text {
+        color: map-deep-get($value, 'assistive-text', 'color');
+      }
+
+      .#{$component}__optional {
+        color: map-deep-get($value, 'optional', 'color');
+      }
+    }
+  }
+
+  @each $key, $value in $label-sizes {
+    &:host([size="#{$key}"]) {
+      .#{$component} {
+        column-gap: map-deep-get($value, 'label', 'gap');
+
+        label {
+          font-size: map-deep-get($value, 'label', 'font-size');
+          font-weight: map-deep-get($value, 'label', 'font-weight');
+        }
+      }
+
+      .#{$component}__assistive-text {
+        font-size: map-deep-get($value, 'assistive-text', 'font-size');
+        font-weight: map-deep-get($value, 'assistive-text', 'font-weight');
+      }
+
+      .#{$component}__optional {
+        font-size: map-deep-get($value, 'optional', 'font-size');
+        font-weight: map-deep-get($value, 'optional', 'font-weight');
+      }
+    }
+  }
+
+  ::slotted(a) {
+    color: var(--color-primary-500);
+  }
+
+  ::slotted(a:hover) {
+    color: var(--color-primary-700);
+  }
+
+  &:host(:host-context(ap-checkbox)) label {
+    cursor: pointer;
+  }
+
+  #tooltip {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    display: none;
+  }
+
+  #tooltip[data-show] {
+    display: block;
+  }
+
+  #arrow,
+  #arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: inherit;
+  }
+
+  #arrow {
+    visibility: hidden;
+  }
+
+  #arrow::before {
+    visibility: visible;
+    content: '';
+    transform: rotate(45deg);
+  }
+
+  #tooltip[data-popper-placement^='top'] > #arrow {
+    bottom: -4px;
+  }
+
+  #tooltip[data-popper-placement^='bottom'] > #arrow {
+    top: -4px;
+  }
+
+  #tooltip[data-popper-placement^='left'] > #arrow {
+    right: -4px;
+  }
+
+  #tooltip[data-popper-placement^='right'] > #arrow {
+    left: -4px;
+  }
+}
+
+

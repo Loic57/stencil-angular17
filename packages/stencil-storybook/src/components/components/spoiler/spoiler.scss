@@ -1,0 +1,13 @@
+$component: ap-spoiler;
+
+:host {
+  ap-button {
+    margin-top: 1.6rem;
+  }
+
+  div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

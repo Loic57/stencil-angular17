@@ -1,0 +1,135 @@
+$component: ap-accordion-item;
+
+@import '../mapping';
+
+:host {
+  display: block;
+  box-shadow: 0;
+  transition: 0.2s;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: -0.9rem;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-neutral-100);
+  }
+
+  &:host(&:last-child) {
+    &:after {
+      content: none;
+    }
+  }
+
+  .#{$component}__trigger {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-appearance: none;
+    outline: 0;
+    border-style: solid;
+    width: 100%;
+    transition: 0.2s;
+
+    > div {
+      display: flex;
+      align-items: center;
+    }
+
+    ap-icon {
+
+    }
+  }
+
+  .#{$component}__content {
+    transition: height 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    height: 0;
+    overflow: hidden;
+  }
+
+  @each $key, $value in $accordion-colors {
+    &:host([color="#{$key}"]) {
+      border-color: map-deep-get($value, 'enable', 'item', 'border-color');
+
+      .#{$component}__trigger {
+        background-color: map-deep-get($value, 'enable', 'item', 'trigger', 'background-color');
+        border-color: transparent;
+      }
+
+      .#{$component}__content {
+        background-color: map-deep-get($value, 'enable', 'item', 'content', 'background-color');
+        border-color: map-deep-get($value, 'enable', 'item', 'content', 'border-color');
+      }
+
+      @media(hover: hover) {
+        &:host(&:hover) {
+          .#{$component}__trigger {
+            background-color: map-deep-get($value, 'hover', 'item', 'trigger', 'background-color');
+          }
+
+          box-shadow: var(--elevation-3);
+        }
+
+        .#{$component}__trigger:focus-visible {
+          border: 0.2rem solid black;
+        }
+
+        &:host(&:focus-within) {
+          box-shadow: var(--elevation-3);
+
+          .#{$component}__trigger {
+            background-color: map-deep-get($value, 'hover', 'item', 'trigger', 'background-color');
+          }
+        }
+      }
+    }
+  }
+
+  @each $key, $value in $accordion-sizes {
+    &:host([size="#{$key}"]) {
+      border-radius: 0 0 map-deep-get($value, 'item', 'border-radius') map-deep-get($value, 'item', 'border-radius');
+
+      .#{$component}__trigger {
+        padding-top: map-deep-get($value, 'item', 'padding-top');
+        padding-right: map-deep-get($value, 'item', 'padding-right');
+        padding-bottom: map-deep-get($value, 'item', 'padding-bottom');
+        padding-left: map-deep-get($value, 'item', 'padding-left');
+        font-size: 1.6rem;
+        font-weight: 500;
+        border-radius: map-deep-get($value, 'item', 'border-radius');
+        border-width: 0.2rem;
+
+        span {
+          font-weight: 700;
+          font-size: 1.6rem;
+        }
+
+        > div {
+          column-gap: map-deep-get($value, 'item', 'gap');
+        }
+      }
+
+      .#{$component}__content {
+        border-radius: 0 0 map-deep-get($value, 'item', 'border-radius') map-deep-get($value, 'item', 'border-radius');
+
+        .inner {
+          padding-top: map-deep-get($value, 'item', 'padding-top');
+          padding-right: map-deep-get($value, 'item', 'padding-right');
+          padding-bottom: map-deep-get($value, 'item', 'padding-bottom');
+          padding-left: map-deep-get($value, 'item', 'padding-left');
+        }
+      }
+
+      &:host([expanded]) {
+        .#{$component}__trigger {
+          border-radius: map-deep-get($value, 'item', 'border-radius') map-deep-get($value, 'item', 'border-radius') 0 0;
+        }
+      }
+    }
+  }
+}

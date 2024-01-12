@@ -1,0 +1,238 @@
+$component: ap-radio;
+
+@import 'mapping';
+
+.#{$component} {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  outline: 0;
+
+  &:focus-visible {
+    .#{$component}__radio {
+      outline: 0.2rem solid var(--color-neutral-black);
+    }
+  }
+
+  .#{$component}__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .#{$component}__radio {
+    border-style: solid;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0;
+    transition: 0.2s;
+    position: relative;
+    background-color: transparent;
+
+    &:after {
+      position: absolute;
+      content: "";
+      transition: 0.2s;
+    }
+  }
+
+  &[border="true"] {
+    border-style: solid;
+  }
+
+  &[disabled="true"], &[disabled="true"] ap-label {
+    cursor: not-allowed!important;
+  }
+
+  // colors styles
+  @each $key, $value in $radio-colors {
+    &[color="#{$key}"] {
+
+      // disabled styles
+      .#{$component}__radio {
+        background-color: map-deep-get($value, 'disabled', 'unchecked', 'radio', 'background-color');
+        border-color: map-deep-get($value, 'disabled', 'unchecked', 'radio', 'border-color');
+
+        &:after {
+          background-color: map-deep-get($value, 'disabled', 'unchecked', 'radio', 'color');
+        }
+      }
+
+      input {
+        &:checked + .#{$component}__radio {
+          background-color: map-deep-get($value, 'disabled', 'checked', 'radio', 'background-color');
+          border-color: map-deep-get($value, 'disabled', 'checked', 'radio', 'border-color');
+
+          &:after {
+            background-color: map-deep-get($value, 'disabled', 'checked', 'radio', 'color');
+          }
+        }
+      }
+
+      &[border="true"] {
+        border-color: map-deep-get($value, 'disabled', 'unchecked', 'container', 'border-color');
+        background-color: map-deep-get($value, 'disabled', 'unchecked', 'container', 'background-color');
+      }
+
+      // not disabled styles
+      &:not([disabled="true"]):not([error="true"]) {
+        .#{$component}__radio {
+          background-color: map-deep-get($value, 'enable', 'unchecked', 'radio', 'background-color');
+          border-color: map-deep-get($value, 'enable', 'unchecked', 'radio', 'border-color');
+
+          &:after {
+            background-color: map-deep-get($value, 'enable', 'unchecked', 'radio', 'color');
+          }
+        }
+
+        input {
+          &:checked + .#{$component}__radio {
+            background-color: map-deep-get($value, 'enable', 'checked', 'radio', 'background-color');
+            border-color: map-deep-get($value, 'enable', 'checked', 'radio', 'border-color');
+
+            &:after {
+              background-color: map-deep-get($value, 'enable', 'checked', 'radio', 'color');
+            }
+          }
+        }
+
+        &[border="true"] {
+          border-color: map-deep-get($value, 'enable', 'unchecked', 'container', 'border-color');
+          background-color: map-deep-get($value, 'enable', 'unchecked', 'container', 'background-color');
+        }
+
+        @media(hover: hover) {
+          &:hover {
+            .#{$component}__radio {
+              box-shadow: map-deep-get($value, 'box-shadow');
+
+              background-color: map-deep-get($value, 'hover', 'unchecked', 'radio', 'background-color');
+              border-color: map-deep-get($value, 'hover', 'unchecked', 'radio', 'border-color');
+
+              &:after {
+                background-color: map-deep-get($value, 'hover', 'unchecked', 'radio', 'color');
+              }
+            }
+
+            input {
+              &:checked + .#{$component}__radio {
+                background-color: map-deep-get($value, 'hover', 'checked', 'radio', 'background-color');
+                border-color: map-deep-get($value, 'hover', 'checked', 'radio', 'border-color');
+
+                &:after {
+                  background-color: map-deep-get($value, 'hover', 'checked', 'radio', 'color');
+                }
+              }
+            }
+
+            &[border="true"] {
+              border-color: map-deep-get($value, 'hover', 'unchecked', 'container', 'border-color');
+              background-color: map-deep-get($value, 'hover', 'unchecked', 'container', 'background-color');
+            }
+          }
+
+          &:focus-visible {
+            .#{$component}__radio {
+              box-shadow: map-deep-get($value, 'box-shadow');
+
+              background-color: map-deep-get($value, 'focus', 'unchecked', 'radio', 'background-color');
+              border-color: map-deep-get($value, 'focus', 'unchecked', 'radio', 'border-color');
+
+              &:after {
+                background-color: map-deep-get($value, 'focus', 'unchecked', 'radio', 'color');
+              }
+            }
+
+            input {
+              &:checked + .#{$component}__radio {
+                background-color: map-deep-get($value, 'focus', 'checked', 'radio', 'background-color');
+                border-color: map-deep-get($value, 'focus', 'checked', 'radio', 'border-color');
+
+                &:after {
+                  background-color: map-deep-get($value, 'focus', 'checked', 'radio', 'color');
+                }
+              }
+            }
+
+            &[border="true"] {
+              border-color: map-deep-get($value, 'focus', 'unchecked', 'container', 'border-color');
+              background-color: map-deep-get($value, 'focus', 'unchecked', 'container', 'background-color');
+            }
+          }
+        }
+      }
+
+      &[error="true"] {
+        .#{$component}__radio {
+          background-color: map-deep-get($value, 'error', 'unchecked', 'radio', 'background-color');
+          border-color: map-deep-get($value, 'error', 'unchecked', 'radio', 'border-color');
+        }
+
+        input {
+          &:checked + .#{$component}__radio {
+            background-color: map-deep-get($value, 'error', 'checked', 'radio', 'background-color');
+            border-color: map-deep-get($value, 'error', 'checked', 'radio', 'border-color');
+
+            &:after {
+              background-color: map-deep-get($value, 'error', 'checked', 'radio', 'color');
+            }
+          }
+        }
+
+        &[indeterminate="true"] {
+          .#{$component}__radio {
+            background-color: map-deep-get($value, 'error', 'checked', 'radio', 'background-color');
+            border-color: map-deep-get($value, 'error', 'checked', 'radio', 'border-color');
+          }
+        }
+
+        &[border="true"] {
+          border-color: map-deep-get($value, 'error', 'unchecked', 'container', 'border-color');
+          background-color: map-deep-get($value, 'error', 'unchecked', 'container', 'background-color');
+        }
+      }
+    }
+  }
+
+  // sizes
+  @each $key, $value in $radio-sizes {
+    &[size="#{$key}"] {
+      column-gap: map-deep-get($value, 'gap');
+
+      .#{$component}__radio {
+        height: map-deep-get($value, 'radio', 'height');
+        width: map-deep-get($value, 'radio', 'width');
+        border-width: map-deep-get($value, 'radio', 'border-width');
+        border-radius: map-deep-get($value, 'radio', 'border-radius');
+
+        &:after {
+          width: 1rem;
+          height: 1rem;
+          border-radius: map-deep-get($value, 'radio', 'border-radius');
+        }
+      }
+
+      .#{$component}__text {
+        row-gap: map-deep-get($value, 'text', 'spacing', 'gap');
+      }
+
+      &[border="true"] {
+        padding-top: map-deep-get($value, 'container', 'spacing', 'padding-top');
+        padding-right: map-deep-get($value, 'container', 'spacing', 'padding-right');
+        padding-bottom: map-deep-get($value, 'container', 'spacing', 'padding-bottom');
+        padding-left: map-deep-get($value, 'container', 'spacing', 'padding-left');
+        border-radius: map-deep-get($value, 'container', 'border-radius');
+        border-width: map-deep-get($value, 'container', 'border-width');
+      }
+    }
+  }
+}

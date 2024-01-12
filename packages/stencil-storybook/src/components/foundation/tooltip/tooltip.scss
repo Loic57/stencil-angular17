@@ -1,0 +1,50 @@
+$component: ap-tooltip;
+
+@import 'mapping';
+
+:host {
+  .#{$component}__slot {
+    display: inline-block;
+  }
+
+  #tooltip {
+    display: none;
+    position: absolute;
+    font-family: var(--font-1);
+    max-width: 25rem;
+  }
+
+  @each $key, $value in $tooltip-colors {
+    &:host([color="#{$key}"]) {
+      #tooltip {
+        background-color: map-deep-get($value, 'background-color');
+        color: map-deep-get($value, 'color');
+      }
+
+      #arrow {
+        background-color: map-deep-get($value, 'background-color');
+      }
+    }
+  }
+
+  @each $key, $value in $tooltip-sizes {
+    &:host([size="#{$key}"]) {
+      #tooltip {
+        font-size: map-deep-get($value, 'font-size');
+        line-height: 1.75;
+        padding-top: map-deep-get($value, 'padding-top');
+        padding-right: map-deep-get($value, 'padding-right');
+        padding-bottom: map-deep-get($value, 'padding-bottom');
+        padding-left: map-deep-get($value, 'padding-left');
+        border-radius: map-deep-get($value, 'border-radius');
+      }
+    }
+  }
+
+  #arrow {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+  }
+}

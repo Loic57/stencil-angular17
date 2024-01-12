@@ -1,0 +1,99 @@
+import { Meta } from "@storybook/blocks";
+
+import Figma1 from "./assets/images/figma-1.jpg";
+import Figma2 from "./assets/images/figma-2.jpg";
+import Figma3 from "./assets/images/figma-3.jpg";
+import Figma4 from "./assets/images/figma-4.jpg";
+import Figma5 from "./assets/images/figma-5.jpg";
+import Figma6 from "./assets/images/figma-6.jpg";
+import Figma7 from "./assets/images/figma-7.jpg";
+
+<Meta title="Introduction/Design Tokens/Tokens Figma" />
+
+<ap-heading size="h1" mb-64>Design Tokens</ap-heading>
+<ap-heading size="h2" mt-64 mb-16>Dans Figma</ap-heading>
+<ap-paragraph mb-16>Tous les composants sont construits avec des design tokens qui suivent tous la même nomenclature.</ap-paragraph>
+
+<ap-paragraph mb-16>Dans Figma, les design tokens sont appelés "local variables" et sont disponibles dans l'interface en haut à droite.</ap-paragraph>
+<img src={Figma1} alt="Capture d'écran de Figma montrant l'emplacement des design tokens/local variables dans un encadré rouge." />
+
+<ap-paragraph mb-16 mt-64>Un clic sur "local variables" ouvrira une fenêtre qui contiendra l'entièreté des tokens rangés dans des collections.</ap-paragraph>
+<img src={Figma2} alt="Capture d'écran de l'écran des local variables dans Figma" />
+
+
+<ap-heading size="h3" mt-64 mb-16>1. Nom de la collection</ap-heading>
+<ap-paragraph>Les tokens sont rangés dans des collections. Il n'existe aucune limite au nombre de collections que l'on peut créer, par contre chaque collection est limité à 5000 tokens. Les collections sont un moyen de créer une structure afin de mieux ranger/ordonner les tokens. Dans notre cas il y a une collection "core" qui contient toutes les bases comme les couleurs, tailles de typo, border radius, ..., un ensemble de collections "foundation" qui regroupent les atomes comme les boutons, badges, input, ... et un ensemble de collections "components" qui regroupent des molécules ou ensemble d'atomes comme des accordéons, expand/collapse, dropdown, ...</ap-paragraph>
+
+<ap-heading size="h3" mt-64 mb-16>2. Nombre de variables</ap-heading>
+<ap-paragraph>Nombre de variables/tokens contenus dans la collection "foundation/badge"</ap-paragraph>
+
+<ap-heading size="h3" mt-64 mb-16>3. Structure des variables</ap-heading>
+<ap-paragraph>Il n'existe aucune structure type pour organiser les tokens/variables, voici quelques explications sur la notre :</ap-paragraph>
+<ul>
+  <li>Toujours commencer par le nom du composant, ici `badge`</li>
+  <li>Un composant dispose toujours de couleurs et d'éléments de sizing, on peut donc créer deux noeuds `color` et `size`</li>
+  <li>
+    Le composant `badge` peut avoir plusieurs couleurs qui seront toutes listées sous `color`
+    <img src={Figma3} alt="Capture d'écran de des différentes variables de couleur du composant badge" />
+  </li>
+  <li>Chaque couleur peut contenir des nuances, par exemple une couleur `primary` peut etre nuancée comme suit : `primary.100`, `primary.200`, `primary.300`, ... `primary.900`. Si `primary` représente une couleur rouge `primary.100` serait la nuance la plus claire et `primary.900` la nuance la plus foncée.</li>
+  <li>
+    Chaque nuance de couleur dispose de variations. Dans le cas d'un badge nous avons les variations suivantes : `filled`, `outlined`, `text`
+    <img src={Figma4} alt="Capture d'écran de des différentes variables de couleur du composant badge" />
+  </li>
+  <li>Le composant badge est assez simple et ne dispose pas d'états, mais dans le cas d'un bouton on aurait pu avoir une granularité encore plus poussé que les variations comme `hover`, `focus`, `active`, `disabled`</li>
+  <li>
+    Après l'état ou la variation vient enfin la partie la plus précise de notre token : la décision design. C'est ici que l'on défini quelle propriété liée à la couleur, voici la liste :
+    <ul>
+      <li>`color`: Couleur du texte du composant</li>
+      <li>`background-color`: Couleur de fond du composant</li>
+      <li>`border-color`: Couleur de la bordure du composant</li>
+      <li>`outline-color`: Couleur de la bordure extérieur du composant (un composant qui n'a pas d'état focus n'aura pas besoin de ce token)</li>
+      <li>
+        `icon`: Couleur de l'icône du composant
+
+        Voici ce que donne la liste des tokens liés à la couleur `primary.500`
+        <img src={Figma5} alt="Capture d'écran de des différentes variables de couleur du composant badge" />
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+<ap-paragraph>Tout ce que l'on vient de voir fonctionne de la même façon pour les tokens de sizing.</ap-paragraph>
+<ul>
+  <li>Le composant badge peut avoir plusieurs tailles qui seront toutes listées sous `size`. La taille par défaut est nommé `default`, s'il y a besoin de faire une taille au dessus nous avons `lg`, `xl`, `xxl` de disponibles et pour les tailles plus petites `sm`, `xs`, `xxs`.</li>
+  <li>
+    A l'intérieur d'une taille on retrouve toutes les propriétés qui peuvent être utiles à notre composant, dans le cas du badge :
+    <ul>
+      <li>
+        `padding-top`, `padding-right`, `padding-bottom`, `padding-left`, `height`, `width`, `border-radius`, `border-width`, `gap`, ...
+        Malheureusement à l'heure où a été écrite cette documentation il n'est pas possible de connecter tous les tokens, par exemple `border-width` n'est pas connectable au composant.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+<ap-heading size="h3" mt-64 mb-16>4. Nom du thème</ap-heading>
+<ap-paragraph>Il est possible de thémer les tokens. Prenons le cas d'un client qui a une identité visuelle différente en fonction de sa cible. Pour la cible 1 on peut avoir un bouton de couleur rouge et pour la cible 2 un bouton bleu.</ap-paragraph>
+
+<ap-heading size="h3" mt-64 mb-16>5. Nom du token</ap-heading>
+
+
+<ap-heading size="h3" mt-64 mb-16>6. Créer une variable</ap-heading>
+<ap-paragraph>Cliquer sur ce bouton permet de créer une variable/token de type `color`, `text`, `number` ou `string`. Une variable `color` fraichement créée vous permettra d'accéder à la palette de couleur et également aux autres variables de type couleur, cela permet de faire un premier tri avec les autres variables de type `number` par exemple.</ap-paragraph>
+
+
+<ap-heading size="h2" mt-64 mb-16>Exporter les tokens</ap-heading>
+<ap-paragraph mb-16>La force des variables/design tokens est de permettre une armonie de l'aspect visuel facilement. Si une modification est faite dans figma il sera assez facile et rapide de la transposer dans le code. Pour cela nous avons besoin d'exporter les design tokens en format JSON, de les importer dans le code et de les transformer en variables CSS.</ap-paragraph>
+<img src={Figma6} alt="Schéma qui représente la place des design tokens dans la librairie de composants" />
+
+<ap-heading size="h3" mt-64 mb-16>Plugin Figma pour exporter les tokens</ap-heading>
+<ap-paragraph mb-16>De base, Figma ne gère pas encore l'export des tokens, il faut passer par un plugin que vous pouvez <ap-link><a href="https://www.figma.com/community/plugin/1255198963912190091" slot="link" target="_blank">télécharger ici</a></ap-link></ap-paragraph>
+
+<ap-heading size="h3" mt-64 mb-16>Fonctionnement du plugin Export Filtered Variables</ap-heading>
+<ap-paragraph mb-16>Une fois le plugin installé et ouvert vous devriez voir cet écran</ap-paragraph>
+<img src={Figma7} alt="Capture d'écran de l'interface du plugin Export Filtered Variables" />
+<ap-paragraph mb-16>Le champs "mode" correspond au thème de la collection. Ce champs restera inactif tant qu'une collaction n'aura pas été selectionnée.</ap-paragraph>
+<ap-paragraph mb-16>Choisissez la collection que vous souhaitez exporter puis cliquer sur le gros bouton violet "Export Variables". La zone de texte juste en dessous va se remplir avec les tokens en format JSON. Tout est prêt pour l'import des tokens dans le code ainsi que leur transformation en variables CSS.</ap-paragraph>

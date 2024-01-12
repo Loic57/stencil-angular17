@@ -1,0 +1,138 @@
+$badge-colors: (
+  primary-300: (
+    filled: (
+      background-color: var(--badge-color-primary-300-filled-background-color),
+      border-color: var(--badge-color-primary-300-filled-border-color),
+      color: var(--badge-color-primary-300-filled-color)
+    ),
+    outlined: (
+      background-color: var(--badge-color-primary-300-outlined-background-color),
+      border-color: var(--badge-color-primary-300-outlined-border-color),
+      color: var(--badge-color-primary-300-outlined-color)
+    ),
+    text: (
+      background-color: var(--badge-color-primary-300-text-background-color),
+      border-color: var(--badge-color-primary-300-text-border-color),
+      color: var(--badge-color-primary-300-text-color)
+    )
+  ),
+  error: (
+    filled: (
+      background-color: var(--badge-color-error-filled-background-color),
+      border-color: var(--badge-color-error-filled-border-color),
+      color: var(--badge-color-error-filled-color)
+    ),
+    outlined: (
+      background-color: var(--badge-color-error-outlined-background-color),
+      border-color: var(--badge-color-error-outlined-border-color),
+      color: var(--badge-color-error-outlined-color)
+    ),
+    text: (
+      background-color: var(--badge-color-error-text-background-color),
+      border-color: var(--badge-color-error-text-border-color),
+      color: var(--badge-color-error-text-color)
+    )
+  ),
+  warning: (
+    filled: (
+      background-color: var(--badge-color-warning-filled-background-color),
+      border-color: var(--badge-color-warning-filled-border-color),
+      color: var(--badge-color-warning-filled-color)
+    ),
+    outlined: (
+      background-color: var(--badge-color-warning-outlined-background-color),
+      border-color: var(--badge-color-warning-outlined-border-color),
+      color: var(--badge-color-warning-outlined-color)
+    ),
+    text: (
+      background-color: var(--badge-color-warning-text-background-color),
+      border-color: var(--badge-color-warning-text-border-color),
+      color: var(--badge-color-warning-text-color)
+    )
+  )
+);
+
+
+$badge-sizes: (
+  default: (
+    height: var(--badge-size-default-height),
+    font-size: var(--badge-size-default-font-size),
+    font-weight: var(--badge-size-default-font-weight),
+    line-height: var(--badge-size-default-line-height),
+    border-width: var(--badge-size-default-border-width),
+    border-radius: var(--badge-size-default-border-radius),
+    padding-top: var(--badge-size-default-spacing-padding-top),
+    padding-bottom: var(--badge-size-default-spacing-padding-bottom),
+    padding-left: var(--badge-size-default-spacing-padding-left),
+    padding-right: var(--badge-size-default-spacing-padding-right),
+    gap: var(--badge-size-default-spacing-gap),
+    with-icon-left: (
+      padding-top: var(--badge-size-default-spacing-with-icon-left-padding-top),
+      padding-bottom: var(--badge-size-default-spacing-padding-bottom),
+      padding-left: var(--badge-size-default-spacing-with-icon-left-padding-left),
+      padding-right: var(--badge-size-default-spacing-with-icon-left-padding-right),
+      gap: var(--badge-size-default-spacing-with-icon-left-gap),
+    ),
+    with-icon-right: (
+      padding-top: var(--badge-size-default-spacing-with-icon-right-padding-top),
+      padding-bottom: var(--badge-size-default-spacing-with-icon-right-padding-bottom),
+      padding-left: var(--badge-size-default-spacing-with-icon-right-padding-left),
+      padding-right: var(--badge-size-default-spacing-with-icon-right-padding-right),
+      gap: var(--badge-size-default-spacing-with-icon-right-gap),
+    )
+  ),
+  sm: (
+    height: var(--badge-size-sm-height),
+    font-size: var(--badge-size-sm-font-size),
+    font-weight: var(--badge-size-sm-font-weight),
+    line-height: var(--badge-size-sm-line-height),
+    border-width: var(--badge-size-sm-border-width),
+    border-radius: var(--badge-size-sm-border-radius),
+    padding-top: var(--badge-size-sm-spacing-padding-top),
+    padding-bottom: var(--badge-size-sm-spacing-padding-bottom),
+    padding-left: var(--badge-size-sm-spacing-padding-left),
+    padding-right: var(--badge-size-sm-spacing-padding-right),
+    gap: var(--badge-size-sm-spacing-gap),
+    with-icon-left: (
+      padding-top: var(--badge-size-sm-spacing-with-icon-left-padding-top),
+      padding-bottom: var(--badge-size-sm-spacing-padding-bottom),
+      padding-left: var(--badge-size-sm-spacing-with-icon-left-padding-left),
+      padding-right: var(--badge-size-sm-spacing-with-icon-left-padding-right),
+      gap: var(--badge-size-sm-spacing-with-icon-left-gap),
+    ),
+    with-icon-right: (
+      padding-top: var(--badge-size-sm-spacing-with-icon-right-padding-top),
+      padding-bottom: var(--badge-size-sm-spacing-with-icon-right-padding-bottom),
+      padding-left: var(--badge-size-sm-spacing-with-icon-right-padding-left),
+      padding-right: var(--badge-size-sm-spacing-with-icon-right-padding-right),
+      gap: var(--badge-size-sm-spacing-with-icon-right-gap),
+    )
+  ),
+  xs: (
+    height: var(--badge-size-xs-height),
+    font-size: var(--badge-size-xs-font-size),
+    font-weight: var(--badge-size-xs-font-weight),
+    line-height: var(--badge-size-xs-line-height),
+    border-width: var(--badge-size-xs-border-width),
+    border-radius: var(--badge-size-xs-border-radius),
+    padding-top: var(--badge-size-xs-spacing-padding-top),
+    padding-bottom: var(--badge-size-xs-spacing-padding-bottom),
+    padding-left: var(--badge-size-xs-spacing-padding-left),
+    padding-right: var(--badge-size-xs-spacing-padding-right),
+    gap: var(--badge-size-xs-spacing-gap),
+    with-icon-left: (
+      padding-top: var(--badge-size-xs-spacing-with-icon-left-padding-top),
+      padding-bottom: var(--badge-size-xs-spacing-padding-bottom),
+      padding-left: var(--badge-size-xs-spacing-with-icon-left-padding-left),
+      padding-right: var(--badge-size-xs-spacing-with-icon-left-padding-right),
+      gap: var(--badge-size-xs-spacing-with-icon-left-gap),
+    ),
+    with-icon-right: (
+      padding-top: var(--badge-size-xs-spacing-with-icon-right-padding-top),
+      padding-bottom: var(--badge-size-xs-spacing-with-icon-right-padding-bottom),
+      padding-left: var(--badge-size-xs-spacing-with-icon-right-padding-left),
+      padding-right: var(--badge-size-xs-spacing-with-icon-right-padding-right),
+      gap: var(--badge-size-xs-spacing-with-icon-right-gap),
+    )
+  )
+);

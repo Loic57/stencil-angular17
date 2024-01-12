@@ -1,0 +1,63 @@
+import { Meta } from "@storybook/blocks";
+
+import ShadowDom from "./assets/images/shadow-dom.jpg";
+
+<Meta title="Introduction/C'est quoi un Web Component" />
+
+<ap-heading size="h1" mb-64>Quelques choses à savoir sur les Web Components</ap-heading>
+
+
+<ap-heading size="h2" mb-16>Introduction</ap-heading>
+<ap-paragraph mb-32>Les Web Components sont un ensemble de plusieurs technologies (html, css, js) qui permettent de créer des éléments personnalisés réutilisables, dont les fonctionnalités sont encapsulées en dehors du reste du code et qui peuvent être utilisées au sein d'applications web.</ap-paragraph>
+
+<ap-heading size="h2" mb-16>Custom tag</ap-heading>
+<ap-paragraph mb-16>En HTML, on utilise des tags/balises du type `<div> <span> <header> <footer> <article>`. Ces tags sont naturellement compris par le navigateur et ne nécessitent aucune configuration/installation spécifique pour pouvoir les utiliser dans un document HTML.</ap-paragraph>
+<ap-paragraph>Lorsque l'on utilise des Web Components on doit fabriquer des tags HTML custom ou des "custom tags" qui vont encapsuler du markup HTML, du CSS et du vanilla JS. Ces custom tags doivent respecter une convention de nommage :</ap-paragraph>
+
+<table width="100%" border="1" className='mb-32'>
+  <thead>
+    <th>Correct</th>
+    <th>Incorrect</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`<ap-button>`</td>
+      <td>`<apButton>`</td>
+    </tr>
+    <tr>
+      <td>`<ap-button>`</td>
+      <td>`<AP-button>`</td>
+    </tr>
+    <tr>
+      <td>`<ap-button>`</td>
+      <td>`<ap_button>`</td>
+    </tr>
+    <tr>
+      <td>`<prefix-component>`</td>
+      <td>`<component>`</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<ap-paragraph>Un custom tag peut être créé de deux façons différentes : </ap-paragraph>
+- <ap-paragraph>En vanilla JS à l'aide d'une class</ap-paragraph>
+```
+class APRecipeCard extends HTMLElement {
+  constructor() {
+    super();
+  }
+}
+
+customElements.define('ap-recipe-card', APRecipeCard);
+```
+- <ap-paragraph>A l'aide d'un outil qui va faciliter et accélerer la conception de Web Components tel que [Lit](https://lit.dev/) ou [Stencil](https://stenciljs.com/)</ap-paragraph>
+
+
+<ap-heading size="h2" mb-16>Shadow DOM</ap-heading>
+<ap-paragraph>DOM signifie Document Object Model, c'est l'ensemble du code HTML d'une page representé sous la forme d'une structure de noeuds connectés représentant les différents éléments et chaines de textes.</ap-paragraph>
+<ap-paragraph mb-32>Lors de la création d'un Web Component il est possible de choisir si l'on utilise le shadow DOM ou non, c'est à dire encapsuler/isoler le contenu CSS, HTML et JS qui est propre au Web Component, cela permet de garder un code propre et éviter les conflits entre composants. C'est un DOM propre au composant, inacessible depuis l'extérieur</ap-paragraph>
+
+<ap-paragraph>Un Shadow DOM est reconnaissable grâce à la balise `#shadow-root (open)`</ap-paragraph>
+
+<img src={ShadowDom} />

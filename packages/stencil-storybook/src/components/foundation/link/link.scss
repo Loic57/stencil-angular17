@@ -1,0 +1,117 @@
+$component: ap-link;
+
+@import 'mapping';
+
+:host {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.8rem;
+
+  ::slotted([slot="link"]) {
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: var(--font-1);
+    display: inline-flex;
+    align-items: center;
+
+    // Ligne grise
+    &:before {
+      height: 0.2rem;
+      left: -2%;
+      transform: scaleX(1);
+      transform-origin: right;
+      transition-delay: .15s;
+    }
+
+    // Ligne violette
+    &:after {
+      height: 1rem;
+      left: -2%;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition-delay: 0;
+      opacity: .24;
+    }
+
+    &:before, &:after {
+      width: 104%;
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 0;
+      transition: .15s cubic-bezier(.785,.135,.15,.86);
+    }
+  }
+
+  &:host(&:hover), &:host(&:focus-within) {
+    ::slotted([slot="link"]) {
+
+      &:before {
+        transform: scaleX(0);
+      }
+
+      &:after {
+        transform: scaleX(1);
+        transition-delay: .15s;
+      }
+    }
+  }
+
+  @each $key, $value in $link-colors {
+    &:host([color="#{$key}"]) {
+      ap-icon {
+        color: map-deep-get($value, 'enable', 'color');
+      }
+
+      ::slotted([slot="link"]) {
+        color: map-deep-get($value, 'enable', 'color');
+
+        &:before {
+          background: map-deep-get($value, 'enable', 'border-color')
+        }
+      }
+
+      &:host(&:hover) {
+        ::slotted([slot="link"]) {
+          color: map-deep-get($value, 'hover', 'color');
+
+          &:after {
+            color: map-deep-get($value, 'hover', 'color');
+            background: map-deep-get($value, 'hover', 'border-color');
+          }
+        }
+      }
+
+      &:host(&:focus-within) {
+        ::slotted([slot="link"]) {
+          color: map-deep-get($value, 'focus', 'color');
+
+          &:after {
+            color: map-deep-get($value, 'focus', 'color');
+            background: map-deep-get($value, 'focus', 'border-color');
+          }
+        }
+      }
+    }
+  }
+
+  @each $key, $value in $link-sizes {
+    &:host([size="#{$key}"]) {
+      ::slotted([slot="link"]) {
+        font-size: map-deep-get($value, 'font-size');
+        line-height: 1.5;
+        column-gap: map-deep-get($value, 'column-gap');
+
+        &:before {
+          bottom: map-deep-get($value, 'row-gap')
+        }
+
+        &:after {
+          bottom: map-deep-get($value, 'row-gap')
+        }
+      }
+    }
+  }
+}
