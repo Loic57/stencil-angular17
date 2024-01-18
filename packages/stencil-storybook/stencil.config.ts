@@ -1,7 +1,6 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 import { ValueAccessorConfig, angularOutputTarget } from '@stencil/angular-output-target';
-import { reactOutputTarget } from '@stencil/react-output-target';
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
@@ -28,11 +27,7 @@ export const config: Config = {
       directivesProxyFile: '../angular-workspace/projects/component-library/src/lib/ap-web-components/components.ts',
       directivesArrayFile: '../angular-workspace/projects/component-library/src/lib/ap-web-components/index.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
-    }),
-    reactOutputTarget({
-      componentCorePackage: 'ap-web-components',
-      proxiesFile: '../react-library/lib/ap-web-components/index.ts',
-    }),
+    })
   ],
   // Tous ces fichiers permettent de créer le fichier css ap-web-components.css dans dist/ap-web-components
   globalStyle: 'src/styles/app.scss',
